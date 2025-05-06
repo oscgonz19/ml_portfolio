@@ -36,26 +36,25 @@ export default function ProfileSection() {
       {/* Right column: narrative about me */}
       <div className="w-1/2 flex items-center justify-center px-12 lg:px-20">
         <div className="max-w-xl space-y-6 text-base leading-relaxed">
-          <p className="text-lg font-medium">
+          <p className="text-lg font-medium font-serif">
             ⛏️ From the rocks to the code
           </p>
 
           <p className="opacity-90">
-            Help teams turn complex, unstructured data into scalable AI systems that support real-time decision-making — from editorial intelligence to agricultural diagnostics and sports analytics.
+            Help teams turn complex, unstructured data into scalable AI systems that support real-time decision-making 
           </p>
           <p className="opacity-90">
-           I began mapping mountains and ancient strata across the Colombian Andes. That same curiosity led me to data, machine learning, and the challenge of modeling complex systems — this time, not underground, but in code.
+           I used to mapping mountains and ancient strata across the Colombian Andes. That same curiosity led me to data, machine learning, and modeling complex systems.
           </p>
 
           <p className="opacity-90">
             My recent work include sports betting
-            analytics, editorial intelligence agents, and geospatial risk models — all served through FastAPI micro‑services and automated with
-            LangChain & cloud‑native pipelines.
+            analytics, editorial intelligence agents, and geospatial risk models 
           </p>
 
 
           <div>
-            <h3 className="uppercase text-sm tracking-wide text-purple-600 mb-2">Core stack</h3>
+            <h3 className="uppercase text-md tracking-wide text-purple-500 mb-2">Core stack</h3>
             <ul className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm opacity-80 list-disc list-inside">
               <li>Python · FastAPI · PyMC · LangChain</li>
               <li>Azure · AWS · Docker · CI/CD</li>

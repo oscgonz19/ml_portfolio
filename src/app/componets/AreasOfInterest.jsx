@@ -33,7 +33,7 @@ const areasOfInterest = [
     icon: <FaDatabase className="mx-auto mb-4 h-12 w-12 text-yellow-600" />,
   },
   {
-    title: 'FinTech',
+    title: 'Market Intelligence',
     description: 'Analyzing financial data and developing predictive models to support decision-making in the financial sector, enhancing efficiency and mitigating risks.',
     icon: <FaChartBar className="mx-auto mb-4 h-12 w-12 text-blue-600" />,
   },
