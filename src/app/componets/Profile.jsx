@@ -1,33 +1,70 @@
 'use client';
 
-import { FaEnvelope, FaTiktok, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { FaArrowRight } from 'react-icons/fa';
 
-const Profile = () => {
+/**
+ * ProfileSection – narrative "About Me" for Oscar
+ */
+export default function ProfileSection() {
   return (
-    
-    <div className="p-6 text-center">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }} 
-        animate={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.6 }} 
-        className=" p-6 rounded-lg flex flex-col items-center text-center transform transition duration-500 hover:scale-105"
-      >
-        <Image
-          src="/Profile13.png" // Reemplaza con la ruta de tu imagen
-          alt="Profile"
-          width={200} 
-          height={200} 
-          className="rounded-full mb-4 border-2 border-purple-700"
-        />
-        <h2 className="text-4xl font-bold mb-2 text-gray-900"> Ozz <span role="img" aria-label="heart">⚡</span></h2>
-        <p className="text-gray-700 mb-4">Data and Earth Scientist with passion for tech, car spotting & finance, currently based in Colombia.</p>
-        <p className="text-gray-500 mb-6">📍 Quindío, COL</p>
-      </motion.div>
-    </div>
-  );
-};
+    <section className="min-h-screen flex  text-black font-serif">
+      {/* Left column: avatar */}
+      <div className="relative w-1/2 flex flex-col items-center justify-center p-8">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          className="relative group"
+        >
+          <div className="overflow-hidden rounded-2xl border border-gray-700">
+            <Image
+              src="/Profile12.png"
+              alt="Oscar Antonio Gonzalez portrait"
+              width={380}
+              height={380}
+              className="rounded-2xl object-cover transition duration-500 blur-sm group-hover:blur-0"
+            />
+            {/* scanline overlay */}
+            <div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.12),rgba(255,255,255,0.12)_1px,transparent_1px,transparent_3px)] animate-scan" />
+          </div>
+        </motion.div>
+      </div>
 
-export default Profile;
+      {/* Right column: narrative about me */}
+      <div className="w-1/2 flex items-center justify-center px-12 lg:px-20">
+        <div className="max-w-xl space-y-6 text-base leading-relaxed">
+          <p className="text-lg font-medium">
+            ⛏️ From the rocks to the code
+          </p>
+
+          <p className="opacity-90">
+            Help teams turn complex, unstructured data into scalable AI systems that support real-time decision-making — from editorial intelligence to agricultural diagnostics and sports analytics.
+          </p>
+          <p className="opacity-90">
+           I began mapping mountains and ancient strata across the Colombian Andes. That same curiosity led me to data, machine learning, and the challenge of modeling complex systems — this time, not underground, but in code.
+          </p>
+
+          <p className="opacity-90">
+            My recent work include sports betting
+            analytics, editorial intelligence agents, and geospatial risk models — all served through FastAPI micro‑services and automated with
+            LangChain & cloud‑native pipelines.
+          </p>
+
+
+          <div>
+            <h3 className="uppercase text-sm tracking-wide text-purple-600 mb-2">Core stack</h3>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm opacity-80 list-disc list-inside">
+              <li>Python · FastAPI · PyMC · LangChain</li>
+              <li>Azure · AWS · Docker · CI/CD</li>
+              <li>Postgres · Redis · Airflow · Spark</li>
+              <li>Next.js · React · Ruby on Rails</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
