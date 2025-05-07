@@ -140,9 +140,9 @@ export default function Articles() {
           initial={{ opacity: 0, y: -20 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.6 }} 
-          className="text-4xl font-extrabold mb-8 text-center text-gray-900"
+          className="text-4xl font-bold font-serif mb-8 text-center text-gray-900"
         >
-          Feature Articles
+          Articles
         </motion.h1>
         <Slider {...settings}>
           {renderArticles()}

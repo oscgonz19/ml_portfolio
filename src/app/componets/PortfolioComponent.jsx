@@ -170,8 +170,8 @@ export default function PortfolioComponent() {
   return (
     <section className=" text-gray-800 py-10">
       <div className="container mx-auto p-5">
-        <h1 className="text-3xl font-bold mb-6 text-center">
-          Explore Projects
+        <h1 className="text-4xl font-bold font-serif mb-8 text-center text-gray-900">
+          Projects
         </h1>
         <div className="flex justify-center items-center mb-8 flex-wrap">
           {["Data Science & Machine Learning", "Data Engineering", "Web Development"].map((category) => (
