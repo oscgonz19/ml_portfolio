@@ -127,7 +127,7 @@ export default function PortfolioComponent() {
       .map((project, index) => (
         <div 
           key={index} 
-          className="bg-white p-4 rounded-lg shadow-md text-black flex flex-col h-full"
+          className="bg-black p-4 rounded-lg shadow-md text-white flex flex-col h-full"
         >
           <div className="relative w-full h-40 mb-4">
             <Image
@@ -141,8 +141,8 @@ export default function PortfolioComponent() {
           <div className="flex flex-col flex-grow justify-between">
             <div>
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-sm text-gray-700 mb-4">{project.description}</p>
-              <ul className="list-disc list-inside mb-4 text-gray-600 text-sm">
+              <p className="text-sm text-gray-300 mb-4">{project.description}</p>
+              <ul className="list-disc list-inside mb-4 text-gray-300 text-sm">
                 {project.highlights.map((highlight, i) => (
                   <li key={i}>{highlight}</li>
                 ))}
@@ -157,7 +157,7 @@ export default function PortfolioComponent() {
                 ))}
               </div>
               <Link href={project.link} legacyBehavior>
-                <a className="text-blue-600 font-semibold hover:underline">
+                <a className="text-orange-600 font-semibold hover:underline">
                   Learn more
                 </a>
               </Link>
@@ -170,7 +170,7 @@ export default function PortfolioComponent() {
   return (
     <section className=" text-gray-800 py-10">
       <div className="container mx-auto p-5">
-        <h1 className="text-4xl font-bold font-serif mb-8 text-center text-gray-900">
+        <h1 className="text-4xl font-bold font-serif mb-8 text-center text-white">
           Projects
         </h1>
         <div className="flex justify-center items-center mb-8 flex-wrap">
@@ -180,7 +180,7 @@ export default function PortfolioComponent() {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 mx-2 my-1 rounded-lg font-medium ${
                 selectedCategory === category
-                  ? "bg-blue-600 text-white"
+                  ? "bg-orange-600 text-white"
                   : "bg-white text-blue-600 border border-blue-600"
               }`}
             >

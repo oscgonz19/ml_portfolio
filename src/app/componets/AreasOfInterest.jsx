@@ -23,13 +23,13 @@ const areasOfInterest = [
 
 export default function AreasOfInterest() {
   return (
-    <section className="bg-white">
+    <section className="bg-black">
       <div className="container mx-auto px-6">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold font-serif mb-8 text-center text-gray-900"
+          className="text-4xl font-bold font-serif mb-8 text-center text-white"
         >
           Focus Areas
         </motion.h1>
@@ -37,13 +37,13 @@ export default function AreasOfInterest() {
           {areasOfInterest.map((area, index) => (
             <motion.div
               key={index}
-              className="text-center p-10 border border-gray-200 rounded-lg shadow-2xl bg-white transform transition hover:scale-105 font-serif"
+              className="text-center p-10 border border-gray-200 rounded-lg shadow-2xl bg-black transform transition hover:scale-105 font-serif"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {area.icon}
-              <h3 className="text-gray-800 text-2xl font-semibold">{area.title}</h3>
+              <h3 className="text-stone-200 text-2xl font-semibold">{area.title}</h3>
             </motion.div>
           ))}
         </div>

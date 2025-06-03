@@ -10,7 +10,7 @@ import { FaArrowRight } from 'react-icons/fa';
  */
 export default function ProfileSection() {
   return (
-    <section className="min-h-screen flex flex-col lg:flex-row items-center bg-white text-gray-900 font-serif">
+    <section className="min-h-screen flex flex-col lg:flex-row items-center bg-black text-gray-900 font-serif">
       {/* Left column: avatar */}
       <div className="w-full lg:w-1/2 flex justify-center p-6 lg:p-12">
         <motion.div
@@ -30,39 +30,25 @@ export default function ProfileSection() {
         </motion.div>
       </div>
 
-      {/* Right column: narrative */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center p-6 lg:p-12 space-y-8">
+    
+      {/* Text */}
+      <div className="w-full lg:w-1/2 flex flex-col justify-center p-8 space-y-6 max-w-xl">
         <div>
-          <p className="text-3xl font-semibold text-stone-800 mb-2">
-            ⛏️ From the rocks to the code.
-          </p>
-          <div className="space-y-4 text-lg leading-relaxed text-stone-700">
-            <p>
-              Turn complex data into scalable AI systems that support real-time decision-making.
-            </p>
-            <p>
-              Years through the Colombian Andes, mapping rock formations and reading the landscape. Today, Its the
-              same mindset to explore data and build systems.
-            </p>
-            <p>
-              My recent work includes sports betting analytics, editorial intelligence agents, and geospatial models.
-            </p>
-          </div>
+          <h1 className="text-4xl font-bold text-white tracking-tight mb-1">Oscar Antonio González</h1>
+          <h2 className="text-2xl font-medium text-stone-400">Data Scientist specialized in automation, statistical modeling, and applied science.</h2>
         </div>
-
         <div>
-          <h3 className="uppercase text-sm tracking-widest text-stone-600 mb-3">
-            Core Stack
-          </h3>
-          <ul className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm text-stone-600">
-            <li>Python · FastAPI · PyMC · LangChain</li>
-            <li>Azure · AWS · Docker · CI/CD</li>
-            <li>Postgres · Redis · Airflow · Spark</li>
-            <li>Next.js · React.js · Ruby on Rails</li>
+          <h3 className="uppercase text-sm font-semibold tracking-wide text-stone-300 mb-2">Core Stack</h3>
+          <ul className="grid grid-cols-2 gap-3 text-sm text-stone-300">
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>LangChain</li>
+            <li>PyMC</li>
+            <li>Docker</li>
+            <li>Airflow</li>
+            <li>Snowflake</li>
+            <li>React / Next.js</li>
           </ul>
-        </div>
-
-        <div>
         </div>
       </div>
     </section>
