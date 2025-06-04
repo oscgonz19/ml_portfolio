@@ -21,7 +21,7 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-4 text-xl">
           <ul className="flex space-x-4">
             <li>
-              <Link href="https://www.canva.com/design/DAFs7jzIutM/WkONmE7E75_GS3KU2lfbSg/view">CV</Link>
+              <Link href="https://www.canva.com/design/DAGN2J0fx8I/G4VsXVOJivhV5m9JaULFbA/view?utm_content=DAGN2J0fx8I&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09d0d2c337">CV</Link>
             </li>
             <li>
               <Link href="">Portfolio</Link>
