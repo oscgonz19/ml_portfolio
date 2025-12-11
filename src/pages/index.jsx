@@ -6,7 +6,7 @@ import "../app/globals.css";
 import HeroSection from "../app/componets/HeroSection";
 import Navbar from "../app/componets/Navbar";
 import AreasOfInterest from "../app/componets/AreasOfInterest";
-import Profile from "../app/componets/Profile";
+import ProfileSection from "../app/componets/Profile";
 import Footer from "../app/componets/Footer";
 import PortfolioComponent from "@/app/componets/PortfolioComponent";
 import Articles from "../app/componets/articlesComponent";
@@ -24,7 +24,7 @@ export default function Home() {
         <HeroSection />
 
         <section id="profile" className="section">
-          <Profile />
+          <ProfileSection />
         </section>
 
         <div className="divider" />

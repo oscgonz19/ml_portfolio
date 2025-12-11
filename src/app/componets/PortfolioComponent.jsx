@@ -1,195 +1,271 @@
-import { useState } from 'react';
+'use client';
+
+import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 const projects = [
+  // =========================
+  // GEOAI & RISK INTELLIGENCE (FLAGSHIPS)
+  // =========================
   {
-    title: 'Automated Financial Analysis using LLM and RAG Techniques',
-    description: 'This project leverages advanced techniques in Language Learning Models (LLM) and Retrieval-Augmented Generation (RAG) to streamline and enhance the analysis of financial reports, specifically 10-K and 10-Q filings.',
-    imageUrl: '/financialAnalisis.jpg',
-    link: 'https://github.com/oscgonz19/Automated-Financial-Analysis-LLM-RAG',
-    highlights: [
-      'A project that uses LLM and RAG techniques to automate financial analysis.',
-      'Aims to streamline and enhance the analysis of financial reports.',
-      'Specifically focuses on 10-K and 10-Q filings.'
-    ],
-    tags: ['Machine Learning', 'Unstructured Data', 'Financial Analysis'],
-    category: 'Data Science & Machine Learning'
-  },
-  {
-    title: "Analysis of Machine Learning Models for Breast Cancer Classification",
-    description: 'This project compares the performance of supervised and unsupervised machine learning techniques for breast cancer detection. It uses the Wisconsin Breast Cancer dataset to train and evaluate the models.',
-    imageUrl: '/pexels-cottonbro.jpg',
-    link: 'https://github.com/oscgonz19/BreastCancerDetection/blob/main/AprendizajeSupervisado_NoSupervisado.ipynb',
-    highlights: [
-      'A project that compares supervised and unsupervised machine learning techniques.',
-      'Uses the Wisconsin Breast Cancer dataset to train and evaluate the models.'
-    ],
-    tags: ['Breast Cancer Detection', 'SciKit-Learn', 'Model Evaluation'],
-    category: 'Data Science & Machine Learning'
-  },
-  {
-    title: 'COMPAS: Exploring Bias in Criminal Profiling Management',
-    description: 'Analyzed bias in criminal profiling management using the COMPAS dataset. Explored data preprocessing techniques to handle missing data and developed visualizations to illustrate the impact of bias.',
-    imageUrl: '/compas.jpg',
-    link: 'https://github.com/oscgonz19/fair_scoring_AIF360/blob/main/compass_bias_%26_fairness.ipynb',
-    highlights: [
-      'Analyzed bias in criminal profiling management using the COMPAS dataset',
-      'Explored data preprocessing techniques to handle missing data',
-      'Developed visualizations to illustrate the impact of bias'
-    ],
-    tags: ['Data Analysis', 'Bias Detection', 'Machine Learning'],
-    category: 'Data Science & Machine Learning'
-  },
-  {
-    title: 'Monitoring the Financial Market of Psychedelics and Cannabis Using AI',
-    description: 'This project uses Langchain to monitor the financial market of psychedelics and cannabis using AI. It leverages OpenAI API and NewsAPI to analyze financial news and provide insights.',
-    imageUrl: '/cannabisnews.jpg',
-    link: 'https://github.com/oscgonz19/PsyCannaFinance',
-    highlights: [
-      "Langchain for financial news analysis using OpenAI API and NewsAPI",
-      "Exploratory data analysis and visualization for insights",
-    ],
-    tags: ['LangChain', 'OpenAI', 'Financial News'],
-    category: 'Data Engineering'
-  },
-  {
-    title: 'PySpark Docker Redshift',
-    description: 'Developed a data pipeline automation system for financial data analysis. The project uses Python and SQL to extract, transform, and load data from various sources for analysis and visualization.',
-    imageUrl: '/dataPipeline.jpg',
+    title: 'Landslide Susceptibility Engine (DEM + Rain + LULC)',
+    description:
+      'End-to-end GeoAI pipeline to predict landslide susceptibility using terrain derivatives, rainfall signals and land cover. Designed for corridor-level decision-making.',
+    imageUrl: '/mockups/geoai-landslide.jpg',
     link: 'https://github.com/oscgonz19',
     highlights: [
-      'Developed a data pipeline automation system for financial data analysis',
-      'Uses Python and SQL to extract, transform, and load data from various sources',
-      'Data analysis and visualization for insights'
+      'Feature engineering from DEM (slope, curvature, TWI, roughness).',
+      'Train/validate with interpretable ML baselines + optional deep models.',
+      'Deployable outputs: risk tiles + interactive map + FastAPI endpoint.',
     ],
-    tags: ['Data Pipeline', 'Financial Data Analysis', 'Python', 'SQL'],
-    category: 'Data Engineering'
+    tags: ['GeoAI', 'DEM', 'Risk', 'Python'],
+    category: 'GeoAI & Risk Intelligence',
+    featured: true,
   },
   {
-    title: 'Real-time Data Processing with Apache Kafka and Spark',
-    description: 'A project that demonstrates real-time data processing using Apache Kafka and Spark. The project uses a sample dataset to simulate real-time data processing and analysis.',
+    title: 'Flood Risk & Rapid Assessment Toolkit',
+    description:
+      'Lightweight flood susceptibility + rapid post-event analysis combining terrain, hydromet proxies and exposure layers for prioritizing interventions.',
+    imageUrl: '/mockups/geoai-flood.jpg',
+    link: 'https://github.com/oscgonz19',
+    highlights: [
+      'Watershed-aware preprocessing and scalable raster workflows.',
+      'Produces ranked risk hotspots and exposure summaries.',
+      'Designed to be adapted to different regions with open data.',
+    ],
+    tags: ['GeoAI', 'Hydrology', 'Raster', 'Xarray'],
+    category: 'GeoAI & Risk Intelligence',
+    featured: true,
+  },
+  {
+    title: 'Terrain Change Detection (LiDAR / DEM)',
+    description:
+      'Detects terrain changes and potential instability zones using multi-temporal DEM/LiDAR data with automated QC and uncertainty-aware outputs.',
+    imageUrl: '/mockups/geoai-lidar.jpg',
+    link: 'https://github.com/oscgonz19',
+    highlights: [
+      'Multi-temporal differencing + denoising + anomaly detection.',
+      'Generates engineering-friendly reports and map layers.',
+      'Strong fit for critical infrastructure monitoring.',
+    ],
+    tags: ['LiDAR', 'DEM', 'Change Detection', 'Infra'],
+    category: 'GeoAI & Risk Intelligence',
+    featured: true,
+  },
+
+  // =========================
+  // ENERGY & SITE INTELLIGENCE (FLAGSHIP)
+  // =========================
+  {
+    title: 'Renewable Site Suitability Optimizer',
+    description:
+      'Geospatial ML framework to rank solar/wind sites using terrain, climate proxies, grid/access constraints and environmental exclusions.',
+    imageUrl: '/mockups/geoai-energy.jpg',
+    link: 'https://github.com/oscgonz19',
+    highlights: [
+      'Multi-criteria + ML hybrid scoring.',
+      'Produces explainable suitability maps and ranked candidates.',
+      'Designed for rapid feasibility screening.',
+    ],
+    tags: ['Energy', 'Site Selection', 'GeoML', 'Infra'],
+    category: 'Energy & Site Intelligence',
+    featured: true,
+  },
+
+  // =========================
+  // MLOPS & DATA ENGINEERING
+  // =========================
+  {
+    title: 'GeoAI MLOps Template (Rasters → Model → API)',
+    description:
+      'Production-ready starter kit for geospatial ML: dataset versioning, training pipelines, experiment tracking and deployable services.',
+    imageUrl: '/mockups/geoai-mlops.jpg',
+    link: 'https://github.com/oscgonz19',
+    highlights: [
+      'Dockerized training + inference.',
+      'MLflow tracking and reproducible experiments.',
+      'Ready to plug into cloud batch workflows.',
+    ],
+    tags: ['MLOps', 'MLflow', 'Docker', 'FastAPI'],
+    category: 'MLOps & Data Engineering',
+    featured: true,
+  },
+  {
+    title: 'Real-time Data Processing with Kafka and Spark',
+    description:
+      'Demonstrates real-time processing patterns and streaming analytics, adaptable to sensor or infra telemetry use cases.',
     imageUrl: '/kafka.jpg',
     link: 'https://github.com/oscgonz19',
     highlights: [
-      'Real-time data processing using Apache Kafka and Spark',
-      'Sample dataset to simulate real-time data processing and analysis'
+      'Streaming architecture patterns.',
+      'Scalable ML-friendly pipelines.',
     ],
-    tags: ['Apache Kafka', 'Apache Spark', 'Real-time Data Processing'],
-    category: 'Data Engineering'
+    tags: ['Kafka', 'Spark', 'Streaming'],
+    category: 'MLOps & Data Engineering',
+  },
+
+  // =========================
+  // APPLIED AI (LLMs / Responsible AI)
+  // =========================
+  {
+    title: 'Automated Financial Analysis using LLM and RAG',
+    description:
+      'LLM + RAG system to streamline analysis of 10-K and 10-Q filings with structured summaries and queryable knowledge.',
+    imageUrl: '/financialAnalisis.jpg',
+    link: 'https://github.com/oscgonz19/Automated-Financial-Analysis-LLM-RAG',
+    highlights: [
+      'Retrieval pipelines for long-form documents.',
+      'Structured, auditable summaries.',
+    ],
+    tags: ['LLM', 'RAG', 'Finance'],
+    category: 'Applied AI',
   },
   {
+    title: 'COMPAS: Exploring Bias in Criminal Profiling Management',
+    description:
+      'Bias analysis and responsible ML exploration with clear visualization of fairness trade-offs.',
+    imageUrl: '/compas.jpg',
+    link: 'https://github.com/oscgonz19/fair_scoring_AIF360/blob/main/compass_bias_%26_fairness.ipynb',
+    highlights: [
+      'Fairness diagnostics.',
+      'Transparent preprocessing choices.',
+    ],
+    tags: ['Fairness', 'AIF360', 'Responsible AI'],
+    category: 'Applied AI',
+  },
+
+  // =========================
+  // PRODUCT & WEB
+  // =========================
+  {
     title: 'ML Portfolio built with Next.js and Tailwind CSS',
-    description: 'A collection of data science projects that I have worked on over the years.',
+    description:
+      'Portfolio framework to present ML and GeoAI case studies with a clean, filterable UX.',
     imageUrl: '/wallpaperwebMLgithub.jpg',
     link: 'https://github.com/oscgonz19/ML_portfolio',
     highlights: [
-      'A collection of data science projects that I have worked on over the years.',
-      'Built with Next.js and Tailwind CSS.',
-      'Hosted on Vercel.'
+      'Fast, clean project navigation.',
+      'Built for case-study storytelling.',
     ],
-    tags: ['React.js', 'Frontend', 'Web App'],
-    category: 'Web Development'
+    tags: ['Next.js', 'Tailwind', 'Frontend'],
+    category: 'Product & Web',
   },
-  {
-    title: 'CRUD application built with Nest.js',
-    description: 'A simple CRUD application built with NestJs and PostgreSQL.',
-    imageUrl: '/nestjs.jpg',
-    link: 'https://github.com/oscgonz19/CRUD-NestJs-firstProject-scheme"',
-    highlights: [
-      'A progressive Node.js framework for building efficient and scalable server-side applications.',
-      'Uses TypeScript, a superset of JavaScript that combines type checking and static analysis.',
-      'Utilizes PostgreSQL, a powerful, open-source object-relational database system.'
-    ],
-    tags: ['TypeScript', 'Backend', 'TypeORM', 'PostgreSQL'],
-    category: 'Web Development'
-  },
-  {
-    title:'Not Everything Belong To The Sea',
-    description: 'Documentary page about the impact of plastic pollution on Colombian coasts .',
-    imageUrl: '/NEBTS2.png',
-    link: 'github.com/oscgonz19',
-    highlights: [
-      'A documentary page about the impact of plastic pollution on Colombian coasts.',
-      'Built with Next.js and Tailwind CSS.',
-      'Hosted on Vercel.'
-    ],
-    tags: ['React.js', 'Frontend', 'Web App'],
-    category: 'Web Development'
-  }
 ];
 
-export default function PortfolioComponent() {
-  const [selectedCategory, setSelectedCategory] = useState("Data Science & Machine Learning");
+const CATEGORIES = [
+  'GeoAI & Risk Intelligence',
+  'Energy & Site Intelligence',
+  'MLOps & Data Engineering',
+  'Applied AI',
+  'Product & Web',
+];
 
-  const renderProjects = () => {
-    return projects
-      .filter(project => project.category === selectedCategory)
-      .map((project, index) => (
-        <div 
-          key={index} 
-          className="bg-black p-4 rounded-lg shadow-md text-white flex flex-col h-full"
-        >
-          <div className="relative w-full h-40 mb-4">
-            <Image
-              src={project.imageUrl}
-              alt={project.title}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-md"
-            />
-          </div>
-          <div className="flex flex-col flex-grow justify-between">
-            <div>
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-sm text-gray-300 mb-4">{project.description}</p>
-              <ul className="list-disc list-inside mb-4 text-gray-300 text-sm">
-                {project.highlights.map((highlight, i) => (
-                  <li key={i}>{highlight}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <div className="mb-4">
-                {project.tags.map((tag, i) => (
-                  <span key={i} className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs font-semibold mr-2">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <Link href={project.link} legacyBehavior>
-                <a className="text-orange-600 font-semibold hover:underline">
-                  Learn more
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div>
-      ));
-  };
+function ProjectCard({ project }) {
+  const isExternal = project.link.startsWith('http');
 
   return (
-    <section className=" text-gray-800 py-10">
-      <div className="container mx-auto p-5">
-        <h1 className="text-4xl font-bold font-serif mb-8 text-center text-white">
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-xl transition hover:border-white/25 hover:bg-white/10 flex flex-col h-full">
+      <div className="relative w-full h-44 mb-4 overflow-hidden rounded-xl">
+        <Image
+          src={project.imageUrl}
+          alt={project.title}
+          fill
+          className="object-cover"
+        />
+        {project.featured && (
+          <div className="absolute top-3 left-3 rounded-full bg-white/90 text-black text-[10px] px-2 py-1 font-semibold tracking-wide">
+            FLAGSHIP
+          </div>
+        )}
+      </div>
+
+      <div className="flex flex-col flex-grow">
+        <h3 className="text-lg font-semibold text-white mb-2">
+          {project.title}
+        </h3>
+        <p className="text-sm text-stone-300 mb-4">
+          {project.description}
+        </p>
+
+        <ul className="list-disc list-inside mb-4 text-stone-300 text-sm space-y-1">
+          {project.highlights.map((highlight, i) => (
+            <li key={i}>{highlight}</li>
+          ))}
+        </ul>
+
+        <div className="mt-auto">
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((tag, i) => (
+              <span
+                key={i}
+                className="bg-white/10 text-stone-200 px-2 py-1 rounded-full text-[10px] font-semibold"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {isExternal ? (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-orange-400 font-semibold hover:underline text-sm"
+            >
+              Learn more →
+            </a>
+          ) : (
+            <Link
+              href={project.link}
+              className="text-orange-400 font-semibold hover:underline text-sm"
+            >
+              Learn more →
+            </Link>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function PortfolioComponent() {
+  const [selectedCategory, setSelectedCategory] = useState(
+    'GeoAI & Risk Intelligence'
+  );
+
+  const filteredProjects = useMemo(
+    () => projects.filter((p) => p.category === selectedCategory),
+    [selectedCategory]
+  );
+
+  return (
+    <section className="bg-black text-gray-200 py-14">
+      <div className="container mx-auto px-6">
+        <h1 className="text-3xl sm:text-4xl font-bold font-serif mb-8 text-center text-white">
           Projects
         </h1>
-        <div className="flex justify-center items-center mb-8 flex-wrap">
-          {["Data Science & Machine Learning", "Data Engineering", "Web Development"].map((category) => (
+
+        <div className="flex justify-center items-center mb-10 flex-wrap gap-2">
+          {CATEGORIES.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 mx-2 my-1 rounded-lg font-medium ${
+              className={`px-4 py-2 rounded-xl text-sm font-medium transition border ${
                 selectedCategory === category
-                  ? "bg-orange-600 text-white"
-                  : "bg-white text-blue-600 border border-blue-600"
+                  ? 'bg-white text-black border-white'
+                  : 'bg-transparent text-white/80 border-white/20 hover:border-white/40'
               }`}
             >
               {category}
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {renderProjects()}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
         </div>
       </div>
     </section>
