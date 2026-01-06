@@ -6,70 +6,51 @@ import Link from 'next/link';
 
 const projects = [
   // =========================
-  // GEOAI & RISK INTELLIGENCE (FLAGSHIPS)
+  // GEOAI (FLAGSHIP)
   // =========================
   {
-    title: 'Landslide Susceptibility Engine (DEM + Rain + LULC)',
+    title: 'Road Corridor Landslide Hazard Engine',
     description:
-      'End-to-end GeoAI pipeline to predict landslide susceptibility using terrain derivatives, rainfall signals and land cover. Designed for corridor-level decision-making.',
+      'End-to-end geohazard pipeline for a mountain road corridor: Factor of Safety points → IDW/Voronoi interpolation → INVÍAS-compliant hazard maps and an interactive Streamlit dashboard.',
     imageUrl: '/mockups/geoai-landslide.jpg',
-    link: 'https://github.com/oscgonz19',
+    link: 'https://github.com/oscgonz19/road-corridor-landslide-hazard-engine',
     highlights: [
-      'Feature engineering from DEM (slope, curvature, TWI, roughness).',
-      'Train/validate with interpretable ML baselines + optional deep models.',
-      'Deployable outputs: risk tiles + interactive map + FastAPI endpoint.',
+      'Implements IDW and Voronoi-based spatial interpolation with robust IO and CRS validation.',
+      'Encodes Hazard × Vulnerability × Exposure concepts aligned with Colombian road standards.',
+      'Ships with a CLI and dashboard for engineers and planners to explore risk scenarios.',
     ],
-    tags: ['GeoAI', 'DEM', 'Risk', 'Python'],
-    category: 'GeoAI & Risk Intelligence',
+    tags: ['GeoAI', 'Landslides', 'Risk', 'Python', 'Streamlit'],
+    category: 'GeoAI',
     featured: true,
   },
   {
-    title: 'Flood Risk & Rapid Assessment Toolkit',
+    title: 'Vegetation Change Intelligence Platform',
     description:
-      'Lightweight flood susceptibility + rapid post-event analysis combining terrain, hydromet proxies and exposure layers for prioritizing interventions.',
+      'Remote sensing platform for 30+ years of vegetation change analysis using Landsat and Sentinel-2 on Google Earth Engine.',
     imageUrl: '/mockups/geoai-flood.jpg',
-    link: 'https://github.com/oscgonz19',
+    link: 'https://github.com/oscgonz19/vegetation-change-intelligence-platform',
     highlights: [
-      'Watershed-aware preprocessing and scalable raster workflows.',
-      'Produces ranked risk hotspots and exposure summaries.',
-      'Designed to be adapted to different regions with open data.',
+      'Builds cloud-masked, sensor-harmonized composites from Landsat 5/7/8 and Sentinel-2.',
+      'Computes NDVI/NBR and change metrics (dNDVI, dNBR) to map disturbance and recovery.',
+      'Exposes an interactive Streamlit UI to explore AOIs, time series and change classes.',
     ],
-    tags: ['GeoAI', 'Hydrology', 'Raster', 'Xarray'],
-    category: 'GeoAI & Risk Intelligence',
+    tags: ['Remote Sensing', 'GEE', 'Change Detection', 'Environment'],
+    category: 'GeoAI',
     featured: true,
   },
   {
-    title: 'Terrain Change Detection (LiDAR / DEM)',
+    title: 'Vías Verdes: Corridor Cartography Engine',
     description:
-      'Detects terrain changes and potential instability zones using multi-temporal DEM/LiDAR data with automated QC and uncertainty-aware outputs.',
-    imageUrl: '/mockups/geoai-lidar.jpg',
-    link: 'https://github.com/oscgonz19',
+      'Engineering-grade geospatial engine for linear infrastructure corridors. Automates chainage (K+format) along the axis, projects features to the corridor, and produces CAD-ready DXF, 300dpi cartographic maps and summary tables using MAGNA-SIRGAS standards.',
+    imageUrl: '/mockups/geoai-corridor.jpg',
+    link: 'https://github.com/oscgonz19/vias-verdes-corridor-cartography-engine',
     highlights: [
-      'Multi-temporal differencing + denoising + anomaly detection.',
-      'Generates engineering-friendly reports and map layers.',
-      'Strong fit for critical infrastructure monitoring.',
+      'Chainage automation with K+format markers and perpendicular offsets for sources, disposal sites and geotechnical points.',
+      'Multi-format exports: DXF layers for CAD workflows, 300dpi PNG map layouts, and CSV summaries.',
+      'Designed from real corridor work and generalized into a reproducible engine for linear infrastructure.',
     ],
-    tags: ['LiDAR', 'DEM', 'Change Detection', 'Infra'],
-    category: 'GeoAI & Risk Intelligence',
-    featured: true,
-  },
-
-  // =========================
-  // ENERGY & SITE INTELLIGENCE (FLAGSHIP)
-  // =========================
-  {
-    title: 'Renewable Site Suitability Optimizer',
-    description:
-      'Geospatial ML framework to rank solar/wind sites using terrain, climate proxies, grid/access constraints and environmental exclusions.',
-    imageUrl: '/mockups/geoai-energy.jpg',
-    link: 'https://github.com/oscgonz19',
-    highlights: [
-      'Multi-criteria + ML hybrid scoring.',
-      'Produces explainable suitability maps and ranked candidates.',
-      'Designed for rapid feasibility screening.',
-    ],
-    tags: ['Energy', 'Site Selection', 'GeoML', 'Infra'],
-    category: 'Energy & Site Intelligence',
+    tags: ['GeoAI', 'Geospatial', 'GeoPandas', 'CAD', 'Civil Engineering'],
+    category: 'GeoAI',
     featured: true,
   },
 
@@ -77,31 +58,58 @@ const projects = [
   // MLOPS & DATA ENGINEERING
   // =========================
   {
-    title: 'GeoAI MLOps Template (Rasters → Model → API)',
+    title: 'Football Match Probabilities ML Pipeline',
     description:
-      'Production-ready starter kit for geospatial ML: dataset versioning, training pipelines, experiment tracking and deployable services.',
-    imageUrl: '/mockups/geoai-mlops.jpg',
-    link: 'https://github.com/oscgonz19',
+      'End-to-end ML pipeline for football match outcome probabilities using Poisson and Dixon-Coles models with Optuna-based hyperparameter tuning.',
+    imageUrl: 'https://raw.githubusercontent.com/oscgonz19/football-expected-goals-ml-pipeline/main/plots/03_team_strength.png',
+    link: 'https://github.com/oscgonz19/football-expected-goals-ml-pipeline',
     highlights: [
-      'Dockerized training + inference.',
-      'MLflow tracking and reproducible experiments.',
-      'Ready to plug into cloud batch workflows.',
+      'Cleans, validates and engineers temporal decay features from real match data.',
+      'Optimizes Dixon-Coles models with Optuna and evaluates with proper scoring rules.',
+      'Production-style architecture with clear entrypoints and demo runs.',
     ],
-    tags: ['MLOps', 'MLflow', 'Docker', 'FastAPI'],
+    tags: ['MLOps', 'Sports Analytics', 'Optuna', 'Python'],
     category: 'MLOps & Data Engineering',
     featured: true,
   },
   {
-    title: 'Real-time Data Processing with Kafka and Spark',
+    title: 'Large-Scale Text Similarity with Spark',
     description:
-      'Demonstrates real-time processing patterns and streaming analytics, adaptable to sensor or infra telemetry use cases.',
+      'Scalable near-duplicate detection pipeline using shingling, MinHash and LSH on Spark DataFrames.',
     imageUrl: '/kafka.jpg',
-    link: 'https://github.com/oscgonz19',
+    link: 'https://github.com/oscgonz19/spark-text-similarity',
     highlights: [
-      'Streaming architecture patterns.',
-      'Scalable ML-friendly pipelines.',
+      'Implements locality-sensitive hashing to avoid O(n²) comparisons.',
+      'Designed as a reusable pattern for high-volume text streams.',
     ],
-    tags: ['Kafka', 'Spark', 'Streaming'],
+    tags: ['Spark', 'LSH', 'Scalability'],
+    category: 'MLOps & Data Engineering',
+  },
+  {
+    title: 'GRU4Rec Reproduction & Evaluation Harness',
+    description:
+      'Reproducible evaluation framework for session-based recommender systems using GRU4Rec.',
+    imageUrl: '/mockups/gru4rec.jpg',
+    link: 'https://github.com/oscgonz19/gru4rec-reproduction-and-audit',
+    highlights: [
+      'Implements clean train/validation/test splits for sequential recommendation.',
+      'Focuses on reproducibility, proper baselines and robust metrics (MRR, Recall@K, NDCG).',
+    ],
+    tags: ['Recommender Systems', 'Deep Learning', 'Evaluation'],
+    category: 'MLOps & Data Engineering',
+  },
+  {
+    title: 'ML Metrics That Matter',
+    description:
+      'A practical guide to choosing the right evaluation metrics in machine learning, connecting technical decisions with real-world performance and business impact.',
+    imageUrl: '/mockups/ml-metrics.jpg',
+    link: 'https://github.com/oscgonz19/ml-metrics-that-matter',
+    highlights: [
+      'Explores when accuracy, F1, ROC-AUC, PR curves and calibration actually make sense.',
+      'Frames metrics around decision-making: cost, risk, uncertainty and stakeholder needs.',
+      'Designed as a reference for practitioners building trustworthy ML systems.',
+    ],
+    tags: ['Evaluation', 'Metrics', 'ML Engineering'],
     category: 'MLOps & Data Engineering',
   },
 
@@ -109,29 +117,56 @@ const projects = [
   // APPLIED AI (LLMs / Responsible AI)
   // =========================
   {
-    title: 'Automated Financial Analysis using LLM and RAG',
+    title: 'Survival Analysis & Time-to-Event Modeling',
     description:
-      'LLM + RAG system to streamline analysis of 10-K and 10-Q filings with structured summaries and queryable knowledge.',
-    imageUrl: '/financialAnalisis.jpg',
-    link: 'https://github.com/oscgonz19/Automated-Financial-Analysis-LLM-RAG',
+      'Hands-on survival analysis study using R to model time-to-event processes, interpret hazard functions, and understand risk dynamics over time.',
+    imageUrl: '/mockups/survival-analysis.jpg',
+    link: 'https://github.com/oscgonz19/biostatistics-survival-r-study',
     highlights: [
-      'Retrieval pipelines for long-form documents.',
-      'Structured, auditable summaries.',
+      'Implements core survival techniques: Kaplan-Meier, Cox proportional hazards and hazard estimation.',
+      'Focuses on interpreting uncertainty, risk evolution and event likelihood through time.',
+      'Demonstrates statistical rigor that translates to risk, health, infrastructure and climate contexts.',
     ],
-    tags: ['LLM', 'RAG', 'Finance'],
+    tags: ['Statistics', 'Survival Analysis', 'R'],
     category: 'Applied AI',
   },
   {
-    title: 'COMPAS: Exploring Bias in Criminal Profiling Management',
+    title: 'Bias & Fairness Analysis with AIF360 (COMPAS)',
     description:
-      'Bias analysis and responsible ML exploration with clear visualization of fairness trade-offs.',
+      'Responsible ML case study exploring bias and fairness trade-offs on the COMPAS dataset with AIF360.',
     imageUrl: '/compas.jpg',
-    link: 'https://github.com/oscgonz19/fair_scoring_AIF360/blob/main/compass_bias_%26_fairness.ipynb',
+    link: 'https://github.com/oscgonz19/fair_scoring_AIF360',
     highlights: [
-      'Fairness diagnostics.',
-      'Transparent preprocessing choices.',
+      'Applies preprocessing and postprocessing debiasing techniques.',
+      'Visualizes fairness metrics and model performance side by side.',
     ],
     tags: ['Fairness', 'AIF360', 'Responsible AI'],
+    category: 'Applied AI',
+  },
+  {
+    title: 'PsyCannaFinance – News & Signal Pipeline',
+    description:
+      'LLM-assisted news intelligence and market signal tracking for cannabis and psychedelics sectors.',
+    imageUrl: '/mockups/news-pipeline.jpg',
+    link: 'https://github.com/oscgonz19/PsyCannaFinance',
+    highlights: [
+      'Combines scraping, NLP and lightweight signal extraction.',
+      'Built to support editorial and research workflows.',
+    ],
+    tags: ['NLP', 'LLM', 'Pipelines'],
+    category: 'Applied AI',
+  },
+  {
+    title: 'Automated Financial Analysis with LLM + RAG',
+    description:
+      'Prototype RAG pipeline for automating analysis of 10-K and 10-Q filings with structured, queryable summaries.',
+    imageUrl: '/financialAnalisis.jpg',
+    link: 'https://github.com/oscgonz19/Automated-Financial-Analysis-LLM-RAG',
+    highlights: [
+      'Scrapes and preprocesses SEC filings for downstream LLM analysis.',
+      'Uses retrieval-augmented generation to surface key financial signals.',
+    ],
+    tags: ['LLM', 'RAG', 'Finance'],
     category: 'Applied AI',
   },
 
@@ -139,14 +174,14 @@ const projects = [
   // PRODUCT & WEB
   // =========================
   {
-    title: 'ML Portfolio built with Next.js and Tailwind CSS',
+    title: 'ML Portfolio – Next.js + Tailwind',
     description:
-      'Portfolio framework to present ML and GeoAI case studies with a clean, filterable UX.',
+      'This portfolio: a clean, filterable interface to present ML and GeoAI case studies.',
     imageUrl: '/wallpaperwebMLgithub.jpg',
     link: 'https://github.com/oscgonz19/ML_portfolio',
     highlights: [
-      'Fast, clean project navigation.',
-      'Built for case-study storytelling.',
+      'Next.js + Tailwind + Framer Motion.',
+      'Designed for storytelling around end-to-end ML projects.',
     ],
     tags: ['Next.js', 'Tailwind', 'Frontend'],
     category: 'Product & Web',
@@ -154,8 +189,7 @@ const projects = [
 ];
 
 const CATEGORIES = [
-  'GeoAI & Risk Intelligence',
-  'Energy & Site Intelligence',
+  'GeoAI',
   'MLOps & Data Engineering',
   'Applied AI',
   'Product & Web',
@@ -231,7 +265,7 @@ function ProjectCard({ project }) {
 
 export default function PortfolioComponent() {
   const [selectedCategory, setSelectedCategory] = useState(
-    'GeoAI & Risk Intelligence'
+    'GeoAI'
   );
 
   const filteredProjects = useMemo(

@@ -11,42 +11,47 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Architecture
 
-This is a Next.js 14 portfolio website for Oscar Antonio González, a Machine Learning Engineer. The project uses the App Router pattern with a hybrid structure:
+This is a Next.js 14 portfolio website using a hybrid router structure:
 
 ### Key Structure
-- **Main page**: `src/pages/index.jsx` (Pages Router) - Acts as the primary entry point, importing and orchestrating all components
-- **App directory**: `src/app/` contains layout, globals, and components using App Router conventions
-- **Components**: Located in `src/app/componets/` (note: typo in directory name, should be "components")
+- **Main page**: `src/pages/index.jsx` (Pages Router) - Primary entry point that imports and orchestrates all components
+- **App directory**: `src/app/` contains layout, globals.css, and components
+- **Components**: Located in `src/app/componets/` (note: directory has typo, should be "components")
 
 ### Component Architecture
-The site is built as a single-page application with sectioned content:
+Single-page application with sectioned content:
 - `HeroSection` - Full-screen landing with background image and social links
 - `Profile` - About section with animated profile picture using Framer Motion
-- `AreasOfInterest` - Skills and expertise areas
-- `PortfolioComponent` - Project showcase
-- `articlesComponent` - Publications and articles
-- `Navbar` - Sticky navigation
+- `AreasOfInterest` - Skills and expertise grid (6 cards)
+- `PortfolioComponent` - Project showcase with category filtering
+- `articlesComponent` - Publications carousel using React Slick
+- `Navbar` - Sticky navigation with mobile hamburger menu
 - `Footer` - Site footer
 
 ### Styling System
 - **Tailwind CSS** with custom layer organization (base, components, utilities)
 - **Design theme**: Black background (`bg-black`) with white text, gray accents
-- **CSS Custom Properties**: `--foreground-rgb` and `--background-rgb` for theming
-- **Responsive**: Container-based layout with responsive padding using `lg:px-24`
-- **Smooth scrolling** enabled globally via CSS
+- **Custom fonts** (defined in tailwind.config.js):
+  - `font-sans` (Inter) - Base text
+  - `font-display` (DM Serif Display) - Hero/large titles
+  - `font-geoai` (Space Grotesk) - Technical headings, GeoAI labels
+  - `font-mono` (JetBrains Mono) - Code/technical content
+- **Responsive**: Container-based layout with `lg:px-24` padding
+
+### Path Aliases
+Import using `@/*` for `./src/*` paths (configured in tsconfig.json)
 
 ### Key Dependencies
-- **Framer Motion**: Used for animations (Profile component has scale/opacity animations)
-- **React Icons**: For social media and interface icons (FaLinkedin, FaGithub, etc.)
-- **React Slick**: Carousel functionality
+- **Framer Motion**: Animations throughout components
+- **React Icons**: Social and UI icons (FaLinkedin, FaGithub, FiMenu, etc.)
+- **React Slick**: Article carousel functionality
 - **Next.js Image**: Optimized images with fill and object-fit properties
 
-### File Organization Notes
-- Components are in `src/app/componets/` (directory name has typo)
-- Main page uses Pages Router pattern in `src/pages/index.jsx`
+### File Organization
+- Components use `'use client'` directive for client-side features
 - Global styles in `src/app/globals.css` with Tailwind layers
-- Public assets in `/public/` including profile images and background images
+- Public assets in `/public/` (profile images, project mockups, backgrounds)
 
 ### Known Issues
-- README.md has merge conflict markers that need to be resolved
-- Component directory name should be corrected from "componets" to "components"
+- README.md has merge conflict markers that need resolution
+- Component directory name typo: `componets` should be `components`

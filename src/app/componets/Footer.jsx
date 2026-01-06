@@ -27,7 +27,7 @@ export default function Footer() {
               ozz.dev
             </div>
             <p className="mt-1 text-xs uppercase tracking-widest text-white/50">
-              GeoAI • Risk • Energy • Critical Infrastructure
+              Earth Observation • Geohazards • Climate Risk • Infrastructure
             </p>
           </div>
 
@@ -117,7 +117,7 @@ export default function Footer() {
             © {year} Óscar Antonio González. All rights reserved.
           </p>
           <p className="text-center">
-            Built for global GeoAI roles and applied risk & energy systems.
+            Geospatial ML systems for risk intelligence and environmental analytics.
           </p>
         </div>
       </div>

@@ -4,42 +4,60 @@ import { motion } from 'framer-motion';
 import {
   FaCloud,
   FaRobot,
-  FaMapMarkedAlt,
+  FaSatellite,
   FaDatabase,
   FaChartBar,
   FaLaptopCode,
+  FaChartLine,
+  FaChess,
+  FaLeaf,
 } from 'react-icons/fa';
 
 const focusAreas = [
   {
-    title: 'Geospatial ML & GeoAI',
-    subtitle: 'Remote sensing, terrain intelligence, spatial modeling',
-    Icon: FaMapMarkedAlt,
+    title: 'Earth Observation & Remote Sensing',
+    subtitle: 'Sentinel-2, Landsat, drone imagery — from raw pixels to decision-ready features',
+    Icon: FaSatellite,
   },
   {
-    title: 'Risk & Critical Infrastructure',
-    subtitle: 'Landslides, floods, corridor-level risk analytics',
+    title: 'Geohazard Risk Intelligence',
+    subtitle: 'Landslide susceptibility, flood risk, terrain instability — ranked and actionable',
     Icon: FaChartBar,
   },
   {
     title: 'Energy & Site Suitability',
-    subtitle: 'Solar/wind optimization with geospatial features',
+    subtitle: 'Solar/wind site ranking with terrain, climate, and infrastructure constraints',
     Icon: FaRobot,
   },
   {
-    title: 'MLOps & Data Pipelines',
-    subtitle: 'Reproducible training, orchestration, monitoring',
+    title: 'Reproducible ML Pipelines',
+    subtitle: 'MLflow, DVC, Docker — from notebooks to production-grade workflows',
     Icon: FaDatabase,
   },
   {
-    title: 'Cloud for Geospatial Scale',
-    subtitle: 'Distributed processing and deployable services',
+    title: 'Cloud & Scalable Processing',
+    subtitle: 'AWS/GCP batch workflows, distributed raster processing, deployable APIs',
     Icon: FaCloud,
   },
   {
-    title: 'Applied Software Engineering',
-    subtitle: 'APIs, tools, and product-ready AI systems',
+    title: 'Production Systems',
+    subtitle: 'FastAPI endpoints, validation layers, CI/CD — systems built for handoff',
     Icon: FaLaptopCode,
+  },
+  {
+    title: 'Statistics',
+    subtitle: 'Inference, uncertainty quantification, probabilistic modeling, experimental design',
+    Icon: FaChartLine,
+  },
+  {
+    title: 'Decision Science',
+    subtitle: 'Multi-criteria analysis, stakeholder trade-offs, explainable model outputs',
+    Icon: FaChess,
+  },
+  {
+    title: 'Climate & Environmental Risk',
+    subtitle: 'Climate hazard modeling, environmental monitoring, sustainability analytics',
+    Icon: FaLeaf,
   },
 ];
 
@@ -64,9 +82,9 @@ export default function AreasOfInterest() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: index * 0.06, ease: 'easeOut' }}
               className="group rounded-2xl border border-white/10 bg-white/5 p-8 shadow-xl transition
-                         hover:border-white/25 hover:bg-white/10"
+                         hover:border-white/25 hover:bg-white/10 text-center"
             >
-              <Icon className="mb-5 h-9 w-9 text-white/80 transition group-hover:text-white" />
+              <Icon className="mb-5 h-9 w-9 mx-auto text-white/80 transition group-hover:text-white" />
               <h3 className="text-lg sm:text-xl font-semibold text-stone-100">
                 {title}
               </h3>

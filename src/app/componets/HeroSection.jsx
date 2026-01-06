@@ -38,7 +38,7 @@ export default function HeroSection() {
         <motion.div {...fadeUp} className="max-w-3xl space-y-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1">
             <span className="font-geoai text-[10px] sm:text-xs font-medium uppercase tracking-[0.28em] text-white/80">
-              GeoAI • Risk • Energy • Infrastructure
+              Earth Observation • Geohazards • Climate Risk • Infrastructure
             </span>
           </div>
 
@@ -51,8 +51,8 @@ export default function HeroSection() {
 
           {/* Tagline: Space Grotesk for tech/infra vibe */}
           <p className="font-geoai text-base sm:text-xl lg:text-2xl leading-relaxed text-white/85">
-            GeoAI & Applied AI Engineer building models for terrain intelligence,
-            critical infrastructure risk, and energy siting.
+            Geospatial ML Engineer — I build terrain risk models, satellite-derived
+            analytics, and environmental ML systems designed for real-world decisions.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 pt-1">

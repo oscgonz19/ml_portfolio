@@ -6,31 +6,33 @@ import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 
 const focusAreas = [
-  'Terrain & LiDAR/DEM Intelligence',
-  'Landslide / Flood Susceptibility',
+  'Geohazards (Landslides, Floods)',
+  'Terrain & DEM/LiDAR Intelligence',
+  'Climate & Environmental Risk',
   'Energy Site Suitability',
-  'Geospatial MLOps',
+  'Infrastructure Analytics',
+  'Reproducible ML Pipelines',
 ];
 
 const coreStack = [
   'Python',
-  'GeoPandas',
+  'GeoPandas / Shapely',
   'Rasterio / Xarray',
+  'Scikit-learn / XGBoost',
   'PyTorch',
   'PostGIS',
   'FastAPI',
   'Docker',
-  'Airflow / MLflow',
+  'MLflow / DVC',
+  'Sentinel-2 / Landsat',
+  'LiDAR / DEMs',
   'AWS / GCP',
-  'QGIS',
-  'React / Next.js',
-  'LangChain',
 ];
 
 export default function ProfileSection() {
   return (
     <section className="min-h-screen bg-black text-white">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-6 py-16 lg:flex-row lg:px-10">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-6 py-16 lg:flex-row-reverse lg:px-10">
         {/* Left: avatar */}
         <div className="flex w-full justify-center lg:w-1/2">
           <motion.div
@@ -55,19 +57,19 @@ export default function ProfileSection() {
 
         {/* Right: text */}
         <div className="flex w-full max-w-xl flex-col gap-8 lg:w-1/2">
-          <header className="space-y-2">
+          <header className="space-y-3">
             <h1 className="font-display text-4xl tracking-tight lg:text-5xl">
               Oscar Antonio González
             </h1>
             <h2 className="font-geoai text-xl font-medium text-stone-300 lg:text-2xl">
-              GeoAI / Geospatial ML Engineer
+              Geospatial ML Engineer
             </h2>
-            <p className="text-sm text-stone-400 lg:text-base">
-              I build machine learning systems for{' '}
-              <span className="text-stone-100">risk intelligence</span>,{' '}
-              <span className="text-stone-100">critical infrastructure</span> and{' '}
-              <span className="text-stone-100">energy site optimization</span>,
-              combining earth science expertise with production-grade AI.
+            <p className="text-sm text-stone-400 lg:text-base leading-relaxed">
+              Geologist turned ML engineer. I design end-to-end pipelines that transform{' '}
+              <span className="text-stone-100">satellite imagery</span>,{' '}
+              <span className="text-stone-100">terrain data</span>, and{' '}
+              <span className="text-stone-100">environmental signals</span>{' '}
+              into actionable risk intelligence — systems built for adoption, not demos.
             </p>
           </header>
 
