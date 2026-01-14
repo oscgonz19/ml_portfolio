@@ -38,7 +38,7 @@ export default function HeroSection() {
         <motion.div {...fadeUp} className="max-w-3xl space-y-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1">
             <span className="font-geoai text-[10px] sm:text-xs font-medium uppercase tracking-[0.28em] text-white/80">
-              Earth Observation • Geohazards • Climate Risk • Infrastructure
+              Machine Learning • Data Science • Cybersecurity • Earth Science
             </span>
           </div>
 
