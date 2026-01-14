@@ -76,7 +76,7 @@ const projects = [
     title: 'Large-Scale Text Similarity with Spark',
     description:
       'Scalable near-duplicate detection pipeline using shingling, MinHash and LSH on Spark DataFrames.',
-    imageUrl: '/kafka.jpg',
+    imageUrl: '/MinHas.png',
     link: 'https://github.com/oscgonz19/spark-text-similarity',
     highlights: [
       'Implements locality-sensitive hashing to avoid O(n²) comparisons.',
@@ -89,7 +89,7 @@ const projects = [
     title: 'GRU4Rec Reproduction & Evaluation Harness',
     description:
       'Reproducible evaluation framework for session-based recommender systems using GRU4Rec.',
-    imageUrl: '/mockups/gru4rec.jpg',
+    imageUrl: '/GRU4Rec.png',
     link: 'https://github.com/oscgonz19/gru4rec-reproduction-and-audit',
     highlights: [
       'Implements clean train/validation/test splits for sequential recommendation.',
@@ -102,7 +102,7 @@ const projects = [
     title: 'ML Metrics That Matter',
     description:
       'A practical guide to choosing the right evaluation metrics in machine learning, connecting technical decisions with real-world performance and business impact.',
-    imageUrl: '/mockups/ml-metrics.jpg',
+    imageUrl: '/mlmetrics.png',
     link: 'https://github.com/oscgonz19/ml-metrics-that-matter',
     highlights: [
       'Explores when accuracy, F1, ROC-AUC, PR curves and calibration actually make sense.',
@@ -134,7 +134,7 @@ const projects = [
     title: 'Bias & Fairness Analysis with AIF360 (COMPAS)',
     description:
       'Responsible ML case study exploring bias and fairness trade-offs on the COMPAS dataset with AIF360.',
-    imageUrl: '/compas.jpg',
+    imageUrl: '/CreditAudit.png',
     link: 'https://github.com/oscgonz19/fair_scoring_AIF360',
     highlights: [
       'Applies preprocessing and postprocessing debiasing techniques.',
