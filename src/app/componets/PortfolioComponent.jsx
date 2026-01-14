@@ -147,7 +147,7 @@ const projects = [
     title: 'PsyCannaFinance – News & Signal Pipeline',
     description:
       'LLM-assisted news intelligence and market signal tracking for cannabis and psychedelics sectors.',
-    imageUrl: '/mockups/news-pipeline.jpg',
+    imageUrl: '/cannabisnews.jpg',
     link: 'https://github.com/oscgonz19/PsyCannaFinance',
     highlights: [
       'Combines scraping, NLP and lightweight signal extraction.',
