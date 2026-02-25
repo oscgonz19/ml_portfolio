@@ -1,63 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-/* ---------- Variables ---------- */
-:root {
-  --foreground-rgb: 255, 255, 255;
-  /* texto blanco por defecto */
-  --background-rgb: 0, 0, 0;
-  /* fondo negro absoluto */
+body {
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ---------- Base ---------- */
-@layer base {
-  body {
-    @apply text-base;
-    color: rgb(var(--foreground-rgb));
-    background: rgb(var(--background-rgb));
-  }
-}
-
-/* ---------- Componentes ---------- */
-@layer components {
-
-  /* Sección homogénea con buena separación */
-  .section {
-    @apply container mx-auto px-4 sm:px-6 lg:px-24 py-16 text-white;
-  }
-
-  /* Línea divisoria sutil entre secciones negras */
-  .divider {
-    @apply w-full h-px bg-gray-800 my-8;
-  }
-
-  /* Texto manuscrito opcional */
-  .handwritten-text {
-    @apply text-[3em];
-    font-family: 'Amatic SC', cursive;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  }
-}
-
-/* ---------- Utilidades ---------- */
-@layer utilities {
-  .text-muted {
-    @apply text-gray-400;
-  }
-
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-/* ---------- Scroll suave ---------- */
-html {
-  scroll-behavior: smooth;
+::selection {
+  background: #333;
+  color: #fff;
 }
