@@ -17,12 +17,11 @@ export default function Home() {
       <main>
         <Container>
           <Section className="py-24">
-            <H1>Oscar Antonio Gonzalez</H1>
+            <H1 className="font-display">Oscar Antonio Gonzalez</H1>
             <Muted className="mt-2">Geospatial ML Engineer</Muted>
             <Text className="mt-6 max-w-lg">
               I build terrain risk models, satellite-derived analytics, and
-              environmental ML systems. Geology foundation, systems
-              mindset.
+              environmental ML systems. Geoscience background. Systems engineering approach.
             </Text>
           </Section>
 
@@ -78,9 +77,8 @@ export default function Home() {
           <Section>
             <H2>Now</H2>
             <Text className="mt-4">
-              Building GeoAI systems for terrain risk and environmental
-              monitoring. Open to senior IC roles in climate tech, earth
-              observation, and applied ML.
+              GeoAI systems for terrain risk and environmental
+              intelligence.
             </Text>
           </Section>
         </Container>
