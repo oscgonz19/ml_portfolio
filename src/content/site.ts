@@ -1,7 +1,7 @@
 import type { NavItem } from '@/types'
 
 export const SITE = {
-  name: 'Oscar Gonzalez',
+  name: 'oscar a. gonzalez',
   title: 'Oscar Gonzalez — Geospatial ML Engineer',
   description:
     'Geospatial ML Engineer. Terrain risk models, satellite-derived analytics, and environmental ML systems.',

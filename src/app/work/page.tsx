@@ -13,9 +13,7 @@ export default function WorkPage() {
         <Container>
           <Section className="py-24">
             <H1>Work</H1>
-            <Text className="mt-4">
-              Curated projects. Systems thinking over demos.
-            </Text>
+            <Text className="mt-4">Curated projects</Text>
           </Section>
 
           <div className="divide-y divide-neutral-800 pb-16">

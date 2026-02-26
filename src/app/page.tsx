@@ -17,12 +17,12 @@ export default function Home() {
       <main>
         <Container>
           <Section className="py-24">
-            <H1>Oscar Gonzalez</H1>
+            <H1>Oscar Antonio Gonzalez</H1>
             <Muted className="mt-2">Geospatial ML Engineer</Muted>
             <Text className="mt-6 max-w-lg">
               I build terrain risk models, satellite-derived analytics, and
-              environmental ML systems. Geology background, engineering
-              discipline.
+              environmental ML systems. Geology foundation, systems
+              mindset.
             </Text>
           </Section>
 
