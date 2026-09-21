@@ -1,31 +1,41 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      fontFamily: {
-        // Base del sitio (ya la usas)
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-
-        // Hero: tu nombre, títulos muy grandes
-        display: ['"DM Serif Display"', 'Georgia', 'serif'],
-
-        // Etiquetas GeoAI, job title, headings técnicos
-        geoai: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-
-        // Código / cosas muy técnicas
-        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+      colors: {
+        paper: {
+          DEFAULT: '#f4f0e8',
+          2: '#ece7dc',
+          3: '#e2dccf',
+        },
+        ink: {
+          DEFAULT: '#1b1916',
+          2: '#4a4540',
+          3: '#7d766d',
+        },
+        rule: '#d6cfc1',
+        ochre: {
+          DEFAULT: '#b4552a',
+          deep: '#8f3f1c',
+        },
+        moss: '#4d6b4c',
+        ice: '#6f8fa3',
+        night: '#141311',
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+      },
+      maxWidth: {
+        page: '76rem',
+        prose: '42rem',
+      },
+      letterSpacing: {
+        label: '0.14em',
       },
     },
   },
   plugins: [],
-};
+}
