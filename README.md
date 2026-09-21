@@ -1,46 +1,41 @@
-# oscargonzalez.dev
+<<<<<<< HEAD
+# ml_engineer_portafolio
+=======
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Personal portfolio. Geospatial ML Engineer.
+## Getting Started
 
-## Stack
-
-- Next.js 14 (App Router, static export)
-- TypeScript (strict)
-- Tailwind CSS
-- System font stack
-
-## Architecture
-
-```
-src/
-  app/          Pages (all server components, statically generated)
-  components/   Design system (typography, layout, cards)
-  content/      Typed data layer (projects, writing, site config)
-  types/        TypeScript interfaces
-```
-
-### Decisions
-
-**No animation library.** Previous version used Framer Motion + React Slick. Removed both. Hover states use CSS transitions only.
-
-**No external fonts.** Removed 4 Google Font imports (Inter, DM Serif Display, Space Grotesk, JetBrains Mono). System font stack loads instantly.
-
-**No images in project cards.** Text communicates better than screenshots for technical work. Reduces payload and maintenance burden.
-
-**Content as typed constants.** All project data, writing entries, and site config live in `src/content/` with TypeScript interfaces. No CMS, no markdown parsing, no build-time data fetching.
-
-**Server components only.** Zero client JavaScript. Every page is statically generated at build time.
-
-**Case study template.** `/work/[slug]` renders structured case studies: Context, Problem, Approach, Technical Decisions, Trade-offs, Outcome.
-
-## Development
+First, run the development server:
 
 ```bash
-yarn dev      # http://localhost:3000
-yarn build    # production build
-yarn lint     # eslint
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Build Output
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-All pages are statically generated. Page JS is 183 bytes each.
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+>>>>>>> 8d3c3bc (Initial commit from Create Next App)
+# ML_portfolio
