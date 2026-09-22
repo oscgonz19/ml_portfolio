@@ -1,4 +1,5 @@
 import type { Project } from '@/types'
+import { PUNTOS_CRITICOS_STATIONS } from './stations'
 
 /**
  * Projects are ordered by weight: the first entries are the ones a visitor
@@ -26,6 +27,7 @@ export const PROJECTS: Project[] = [
       { name: 'Pijao', label: '24 points · 12.1 km', coords: [-75.704, 4.335] },
       { name: 'Buenavista', label: '11 points · 5 sectors', coords: [-75.74, 4.36] },
     ],
+    stations: PUNTOS_CRITICOS_STATIONS,
     featured: true,
     cover: {
       src: '/work/pijao/drone-landslide-houses.jpg',
@@ -50,6 +52,14 @@ export const PROJECTS: Project[] = [
           'Geology of the Pijao corridor with the 24 critical points. Rosario and Córdoba complexes between the Silvia–Pijao and Río Verde faults; Armenia Formation to the west. SGC 243–262, 1:50 000.',
         ratio: 1.463,
         kind: 'map',
+      },
+      {
+        src: '/work/pijao/columna-estratigrafica.jpg',
+        alt: 'Generalized regional stratigraphic column of Quindío from Paleozoic metamorphic basement to Quaternary deposits',
+        caption:
+          'Generalized stratigraphy of Quindío, drawn for the report: Cajamarca basement, Mesozoic volcano-sedimentary sequences, Cinta de Piedra, La Paila, the Armenia Formation and the Quaternary on top.',
+        ratio: 0.857,
+        kind: 'plot',
       },
       {
         src: '/work/pijao/serpentinite-annotated.jpg',

@@ -82,11 +82,17 @@ export default function ProjectPage({ params }: Params) {
             {hasPlace && (
               <div className="mt-6">
                 <PlaceMap
-                  markers={
-                    project.places
+                  markers={[
+                    ...(project.places
                       ? project.places.map((pl) => ({ name: pl.name, label: pl.label, coords: pl.coords }))
-                      : [{ name: project.place.name, coords: project.place.coords }]
-                  }
+                      : [{ name: project.place.name, coords: project.place.coords }]),
+                    ...(project.stations ?? []).map((st) => ({
+                      name: st.code,
+                      label: `${st.place}, ${st.municipality}`,
+                      coords: st.coords,
+                      quiet: true,
+                    })),
+                  ]}
                   center={project.places ? undefined : project.place.coords}
                   zoom={project.place.zoom ?? 9}
                   className="aspect-[16/9] md:aspect-[2/1]"
@@ -124,6 +130,63 @@ export default function ProjectPage({ params }: Params) {
             </StoryBlock>
           </div>
         )
+      )}
+
+      {project.stations && project.stations.length > 0 && (
+        <section className="rule py-8">
+          <h2 className="label-ink mb-2">Field stations</h2>
+          <p className="measure mb-6 text-[15px] text-ink-2">
+            From the survey log. Each row is a place where the ground was described, not modelled — the dots on the map above.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[56rem] border-collapse font-mono text-[12px] leading-snug">
+              <thead>
+                <tr className="rule-ink text-left text-ink-3">
+                  {['Station', 'Place', 'Lat / Lon', 'Elev.', 'Unit · lithology', 'Weathering', 'Slope', 'Condition', 'Process'].map((h) => (
+                    <th key={h} className="py-2 pr-4 font-normal uppercase tracking-label">
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {project.stations.map((st) => (
+                  <tr key={st.code} className="rule align-top">
+                    <td className="py-2 pr-4 text-ink">{st.code}</td>
+                    <td className="py-2 pr-4">
+                      {st.place}
+                      <span className="text-ink-3"> · {st.municipality}</span>
+                    </td>
+                    <td className="py-2 pr-4 tabular-nums text-ink-2">
+                      {st.coords[1].toFixed(4)} / {st.coords[0].toFixed(4)}
+                    </td>
+                    <td className="py-2 pr-4 tabular-nums text-ink-2">{st.elevation} m</td>
+                    <td className="py-2 pr-4">
+                      {st.unit}
+                      <span className="text-ink-3"> · {st.lithology}</span>
+                    </td>
+                    <td className="py-2 pr-4 text-ink-2">{st.weathering}</td>
+                    <td className="py-2 pr-4 tabular-nums text-ink-2">{st.slope}</td>
+                    <td className="py-2 pr-4">
+                      <span
+                        className={
+                          st.condition === 'unstable'
+                            ? 'text-ochre-deep'
+                            : st.condition === 'marginal'
+                              ? 'text-ink'
+                              : 'text-ink-3'
+                        }
+                      >
+                        {st.condition}
+                      </span>
+                    </td>
+                    <td className="py-2 text-ink-2">{st.process}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
       )}
 
       {project.figures.length > 0 && (

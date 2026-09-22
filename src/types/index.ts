@@ -25,6 +25,22 @@ export interface Link {
   href: string
 }
 
+/** One row of a field station log */
+export interface Station {
+  code: string
+  place: string
+  municipality: string
+  /** [longitude, latitude] */
+  coords: [number, number]
+  elevation: number
+  unit: string
+  lithology: string
+  weathering: string
+  slope: string
+  condition: 'stable' | 'marginal' | 'unstable'
+  process: string
+}
+
 export interface ProjectStory {
   question: string
   place: string
@@ -43,6 +59,8 @@ export interface Project {
   place: Place
   /** Extra sites for projects that span many places (drawn on the same map) */
   places?: Place[]
+  /** Field station log, rendered as a table and as dots on the map */
+  stations?: Station[]
   /** Featured projects get a full story page and large visuals */
   featured: boolean
   cover: Figure

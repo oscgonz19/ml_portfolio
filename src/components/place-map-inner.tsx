@@ -43,8 +43,15 @@ export function PlaceMapInner({ markers, center, zoom, interactive = true }: Pla
     if (interactive) map.addControl(new NavigationControl({ showCompass: false }), 'top-right')
 
     // Dense maps get name-only labels, alternating sides so neighbours don't collide.
-    const dense = markers.length > 6
+    const dense = markers.filter((m) => !m.quiet).length > 6
     markers.forEach((m, i) => {
+      if (m.quiet) {
+        const dot = document.createElement('div')
+        dot.className = 'h-2 w-2 rounded-full bg-[#1b1916] ring-1 ring-[#f4f0e8]'
+        dot.title = m.label ? `${m.name} · ${m.label}` : m.name
+        new Marker({ element: dot }).setLngLat(m.coords).addTo(map)
+        return
+      }
       new Marker({
         element: markerElement(Boolean(m.dashed), m.name, dense ? undefined : m.label, i % 2 === 1),
         anchor: i % 2 === 1 ? 'right' : 'left',

@@ -7,6 +7,8 @@ export interface MapMarker {
   label?: string
   coords: [number, number]
   dashed?: boolean
+  /** Dot only, name as tooltip — for dense station layers */
+  quiet?: boolean
 }
 
 export interface PlaceMapProps {
