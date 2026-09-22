@@ -41,6 +41,8 @@ export interface Project {
   year: string
   threads: Thread[]
   place: Place
+  /** Extra sites for projects that span many places (drawn on the same map) */
+  places?: Place[]
   /** Featured projects get a full story page and large visuals */
   featured: boolean
   cover: Figure

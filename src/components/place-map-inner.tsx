@@ -8,11 +8,12 @@ import type { PlaceMapProps } from './place-map'
 // Free vector tiles, no API key. Positron is a quiet, paper-like base.
 const STYLE = 'https://tiles.openfreemap.org/styles/positron'
 
-function markerElement(dashed: boolean, name: string, label?: string) {
+function markerElement(dashed: boolean, name: string, label?: string, flip = false) {
   const el = document.createElement('div')
-  el.className = 'flex items-center gap-2'
+  el.className = `flex items-center gap-2 ${flip ? 'flex-row-reverse' : ''}`
+  el.title = label ? `${name} · ${label}` : name
   el.innerHTML = `
-    <span class="block h-3 w-3 rounded-full ${
+    <span class="block h-3 w-3 shrink-0 rounded-full ${
       dashed ? 'border-2 border-dashed border-[#6f8fa3] bg-transparent' : 'border-2 border-[#f4f0e8] bg-[#b4552a]'
     }"></span>
     <span class="whitespace-nowrap bg-[#f4f0e8]/85 px-1.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.12em] text-[#1b1916]">
@@ -41,16 +42,21 @@ export function PlaceMapInner({ markers, center, zoom, interactive = true }: Pla
 
     if (interactive) map.addControl(new NavigationControl({ showCompass: false }), 'top-right')
 
-    for (const m of markers) {
-      new Marker({ element: markerElement(Boolean(m.dashed), m.name, m.label), anchor: 'left' })
+    // Dense maps get name-only labels, alternating sides so neighbours don't collide.
+    const dense = markers.length > 6
+    markers.forEach((m, i) => {
+      new Marker({
+        element: markerElement(Boolean(m.dashed), m.name, dense ? undefined : m.label, i % 2 === 1),
+        anchor: i % 2 === 1 ? 'right' : 'left',
+      })
         .setLngLat(m.coords)
         .addTo(map)
-    }
+    })
 
     if (!center && markers.length > 1) {
       const bounds = new LngLatBounds()
       for (const m of markers) bounds.extend(m.coords)
-      map.fitBounds(bounds, { padding: 80, maxZoom: 6, duration: 0 })
+      map.fitBounds(bounds, { padding: 60, maxZoom: markers.length > 4 ? 9 : 6, duration: 0 })
     }
 
     return () => map.remove()

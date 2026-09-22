@@ -37,12 +37,27 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="md:col-span-5 md:pt-10">
-          <div className="relative mx-auto max-w-xs overflow-hidden border border-rule" style={{ aspectRatio: 1.12 }}>
+          <div className="relative mx-auto max-w-xs overflow-hidden border border-rule" style={{ aspectRatio: 1 }}>
             <Image src="/about/portrait.jpg" alt={`Portrait of ${SITE.name}`} fill sizes="320px" className="object-cover" priority />
           </div>
           <p className="mt-2.5 text-center font-mono text-[12px] text-ink-3">{SITE.name} · {SITE.base.name}</p>
         </div>
       </header>
+
+      <figure className="mt-16">
+        <div className="relative w-full overflow-hidden border border-rule bg-paper-2" style={{ aspectRatio: 2.2 }}>
+          <Image
+            src="/work/drone/buenavista-clouds.jpg"
+            alt="Cloud bank on a ridge above coffee farms in Buenavista, Quindío, photographed from a drone"
+            fill
+            sizes="(min-width: 1280px) 76rem, 100vw"
+            className="object-cover"
+          />
+        </div>
+        <figcaption className="mt-2.5 font-mono text-[12px] text-ink-3">
+          Buenavista, Quindío, July 2025 — a field day in the Cordillera Central, from the drone.
+        </figcaption>
+      </figure>
 
       {/* Stratigraphic column of the practice */}
       <section className="mt-20">

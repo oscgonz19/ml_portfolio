@@ -84,7 +84,7 @@ export default function HomePage() {
 
         {secondary.length > 0 && (
           <div className="rule mt-24 grid gap-10 pt-10 md:grid-cols-3">
-            {secondary.map((p) => (
+            {secondary.slice(0, 3).map((p) => (
               <SecondaryProject key={p.slug} project={p} />
             ))}
           </div>

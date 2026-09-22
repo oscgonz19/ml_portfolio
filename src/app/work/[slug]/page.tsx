@@ -82,13 +82,18 @@ export default function ProjectPage({ params }: Params) {
             {hasPlace && (
               <div className="mt-6">
                 <PlaceMap
-                  markers={[{ name: project.place.name, coords: project.place.coords }]}
-                  center={project.place.coords}
+                  markers={
+                    project.places
+                      ? project.places.map((pl) => ({ name: pl.name, label: pl.label, coords: pl.coords }))
+                      : [{ name: project.place.name, coords: project.place.coords }]
+                  }
+                  center={project.places ? undefined : project.place.coords}
                   zoom={project.place.zoom ?? 9}
                   className="aspect-[16/9] md:aspect-[2/1]"
                 />
                 <p className="mt-2 font-mono text-[12px] text-ink-3">
-                  {project.place.label} · Drag to pan, buttons to zoom.
+                  {project.places ? `${project.places.length} sites · town-level positions` : project.place.label} · Drag
+                  to pan, buttons to zoom.
                 </p>
               </div>
             )}

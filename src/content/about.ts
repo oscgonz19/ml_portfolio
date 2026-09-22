@@ -75,18 +75,25 @@ export const ABOUT = {
         'Geology and geotechnical reports, field mapping, SPT campaign and corridor cartography for the Armenia–Montenegro and Montenegro–Quimbaya segments.',
     },
     {
-      role: 'Geologist — mountain road hazard assessment',
-      org: 'Pijao, Quindío',
+      role: 'Geologist — geology, hydrogeology & risk',
+      org: 'Consorcio Puntos Críticos, Quindío',
       period: '2025',
       note:
-        'Geological and hydrogeological evaluation, Factor of Safety hazard zonation and multitemporal satellite analysis for a rural road corridor.',
+        'Forty-eight critical points on the rural roads of Génova, Pijao and Buenavista: field geology, hydrogeological models, drone survey, stability analysis and hazard–vulnerability–risk reports for the rehabilitation designs.',
     },
     {
-      role: 'Independent — geospatial data products',
-      org: 'Open source',
+      role: 'Consulting geologist',
+      org: 'Independent · Quindío, Valle del Cauca, Risaralda, Caldas',
+      period: '2021 →',
+      note:
+        'Around twenty geology and geotechnical studies for road stabilization, slope failures, foundations and corridors — from Anserma to Palmira, Alcalá–Cartago to Santa Rosa de Cabal.',
+    },
+    {
+      role: 'Open-source geospatial tools',
+      org: 'GitHub',
       period: '2025 →',
       note:
-        'Verdant (vegetation change on GEE), ElevToposter, Expedition Mapper, corridor toolkit, landslide hazard pipeline.',
+        'Verdant (vegetation change on GEE), ElevToposter, Expedition Mapper, corridor toolkit, landslide hazard pipeline and dashboard.',
     },
   ],
   places: [
