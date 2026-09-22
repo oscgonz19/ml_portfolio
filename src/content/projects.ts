@@ -153,6 +153,175 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    slug: 'santa-rosa-landslide',
+    title: 'The hillside that took the road with it',
+    summary:
+      'A rock slope failure on a secondary road in Santa Rosa de Cabal, Risaralda. Two joint sets, a wedge, a river at the toe: field geology, kinematic analysis, boreholes, laboratory and seismic refraction to explain the failure and support the rebuild.',
+    year: '2024',
+    threads: ['earth', 'field', 'cartography'],
+    place: {
+      name: 'Santa Rosa de Cabal, Risaralda',
+      coords: [-75.62, 4.87],
+      label: '4°52′N 75°37′W',
+      zoom: 11,
+    },
+    featured: true,
+    cover: {
+      src: '/work/santa-rosa/drone-landslide.jpg',
+      alt: 'Drone photograph of a large landslide scar above a river, with the road trace cut across it',
+      caption: 'The failure from the drone: a bare scar several hundred metres across, the river at its toe, the road trace across the middle.',
+      ratio: 1.333,
+      kind: 'photo',
+    },
+    figures: [
+      {
+        src: '/work/santa-rosa/drone-dcrem-annotated.jpg',
+        alt: 'Annotated drone view of the landslide labelled Dcrem, with the river and coffee farms around it',
+        caption: 'The same scar annotated for the report as a denudational unit (Dcrem), with the drainage that undercuts it.',
+        ratio: 1.331,
+        kind: 'photo',
+      },
+      {
+        src: '/work/santa-rosa/joint-sets.jpg',
+        alt: 'Two photographs of a rock face, the second with the two joint families traced in red',
+        caption: 'A / B — the rock face beside the road, and the two joint families traced on it. Their intersection is the wedge.',
+        ratio: 2.184,
+        kind: 'photo',
+      },
+      {
+        src: '/work/santa-rosa/stereonet.jpg',
+        alt: 'Equal-angle stereonet with Fisher pole concentrations of the joint families',
+        caption: 'Poles of the joint measurements on an equal-angle lower-hemisphere stereonet. Two clusters, one intersection line.',
+        ratio: 1.808,
+        kind: 'plot',
+      },
+      {
+        src: '/work/santa-rosa/wedge-analysis.jpg',
+        alt: 'Kinematic wedge analysis showing the two planes and the sliding wedge in 3D',
+        caption: 'Wedge kinematics: the slide happens along the line where the two planes meet, daylighting into the cut.',
+        ratio: 2.21,
+        kind: 'plot',
+      },
+      {
+        src: '/work/santa-rosa/geologia-santa-rosa.jpg',
+        alt: 'Geological map of the Santa Rosa sector with the Montenegro fault, Quebradagrande and Arquía complexes and the Santa Rosa gabbroic stock',
+        caption: 'Geology of the sector: Quebradagrande and Arquía complexes, the Santa Rosa gabbroic stock and the Montenegro fault. SGC Plancha 224.',
+        ratio: 1.557,
+        kind: 'map',
+      },
+      {
+        src: '/work/santa-rosa/sample-thin-section.jpg',
+        alt: 'Hand sample of the hypabyssal rock with a pen for scale and an inset of its texture',
+        caption: 'The rock itself: a hypabyssal body, with the texture in the inset. What it is decides how it breaks.',
+        ratio: 1.629,
+        kind: 'photo',
+      },
+      {
+        src: '/work/santa-rosa/xenocryst.jpg',
+        alt: 'Hand sample showing a xenocryst and the weathering profile from soil to rock, with a compass for scale',
+        caption: 'Xenocryst and the weathering profile from soil to fresh rock.',
+        ratio: 1.04,
+        kind: 'photo',
+      },
+    ],
+    story: {
+      question:
+        'A secondary road lost part of its bench to a rock fall that kept feeding the slope below. The municipality needed to know whether the failure was a one-off or the expression of the rock mass itself — and what a safe rebuild would have to respect.',
+      place:
+        'A road cut in a hypabyssal igneous body on the eastern side of the Cauca valley, between the Quebradagrande and Arquía complexes and next to the Santa Rosa gabbroic stock. The Montenegro fault, a 20 km scarp trending N20°E with decapitated drainages, runs nearby and explains why the rock is fractured the way it is.',
+      data: [
+        'Field mapping of the road cut and the scar; structural measurements of every joint family exposed',
+        'Drone flight for orthophotos and oblique views of the whole slope',
+        'Boreholes with core logs, and laboratory tests on the recovered material',
+        'A seismic refraction line to read the depth to sound rock under the road',
+        'Hand samples and their textures, to name the rock and its weathering profile',
+      ],
+      method: [
+        'Plot the joints on a stereonet; identify the two families and their intersection',
+        'Run the kinematic analysis for wedge failure against the cut orientation — the slide is along the intersection line, not the bedding',
+        'Tie the borehole logs and the seismic velocities into a subsurface model of rock, weathered rock and soil',
+        'Draw the geological map and the annotated figures that make the mechanism legible to the engineer',
+      ],
+      result:
+        'A geological and geotechnical report that names the mechanism — a structurally controlled wedge in a jointed hypabyssal rock, undercut by the drainage — and the constraints for the rebuild: cut orientation, drainage, and where not to load the slope. Delivered with borehole, laboratory and seismic annexes.',
+    },
+    technology: ['Field geology', 'Stereonet / kinematic analysis', 'Boreholes & core logging', 'Seismic refraction', 'DJI drone', 'QGIS'],
+    links: [],
+  },
+  {
+    slug: 'buga-la-habana',
+    title: 'Conglomerates over claystone, and a fault between them',
+    summary:
+      'Geology for two retaining walls on the Buga–La Habana road, Valle del Cauca: La Paila Formation conglomerates resting on grey clayey sands along an active contact, folded by the Sonso anticline — worked out in the field and drawn by hand.',
+    year: '2024',
+    threads: ['earth', 'field', 'cartography'],
+    place: {
+      name: 'Buga – La Habana, Valle del Cauca',
+      coords: [-76.24, 3.90],
+      label: '3°54′N 76°14′W',
+      zoom: 11,
+    },
+    featured: true,
+    cover: {
+      src: '/work/buga/block-diagram.jpg',
+      alt: 'Hand-drawn block diagram: conglomerates over claystone with a faulted contact showing active kinematics, road on top',
+      caption: 'Block diagram drawn for the report: La Paila conglomerates over claystone, the road on top, and a faulted contact with recent movement between them.',
+      ratio: 1.46,
+      kind: 'render',
+    },
+    figures: [
+      {
+        src: '/work/buga/conglomerate-claystone.jpg',
+        alt: 'Annotated outcrop photograph with the conglomerate and claystone units labelled and the contact traced',
+        caption: 'The contact in the road cut: polymictic conglomerate above, claystone below, a hammer for scale.',
+        ratio: 1.328,
+        kind: 'photo',
+      },
+      {
+        src: '/work/buga/sonso-anticline-sketch.jpg',
+        alt: 'Hand-drawn sketch of the Sonso anticline folding the La Paila Formation over the ophiolitic complex and the Buga batholith',
+        caption: 'The Sonso anticline sketched: La Paila folded over the ophiolitic complex, the Buga batholith to the east.',
+        ratio: 2.153,
+        kind: 'render',
+      },
+      {
+        src: '/work/buga/section-sketch.jpg',
+        alt: 'Hand-drawn cross-section from the road to the river showing conglomerate over claystone and fluvial erosion',
+        caption: 'Road to river: conglomerate over claystone, and the fluvial erosion that keeps the toe moving.',
+        ratio: 1.109,
+        kind: 'render',
+      },
+      {
+        src: '/work/buga/geologia-buga.jpg',
+        alt: 'Geological map of the Buga–La Habana sector with the Sonso anticline and syncline, thrust fault and the Guadalajara river',
+        caption: 'Geology of the sector: La Paila Formation, ophiolitic complex, alluvial fans, the Sonso anticline and the thrust. SGC Plancha 261, 2024.',
+        ratio: 1.418,
+        kind: 'map',
+      },
+    ],
+    story: {
+      question:
+        'Two retaining walls were being designed on the road from Buga up to La Habana, where blocks of conglomerate keep coming off the cut. Before the walls: what is the slope made of, why does it shed material, and is the ground under the road moving?',
+      place:
+        'The eastern piedmont of the Cauca valley at the Buga salient, where thrust sheets narrow the valley and push the river against the strike-slip faults of the margin. The road climbs through the Upper Miocene La Paila Formation — polymictic conglomerates and tuffaceous sandstones — folded by the asymmetric Sonso anticline, which still gently folds Quaternary sediments at its southern end.',
+      data: [
+        'Field mapping along the cut: conglomerate over grey clayey sands, bedding NNE/E, evidence of recent kinematics at the contact',
+        'Regional geology (SGC Plancha 261), ALOS PALSAR DEM, and the published stratigraphy of La Paila',
+        'Seismic refraction lines and geotechnical memoirs from the wall designers',
+      ],
+      method: [
+        'Walk the section, log the units, measure bedding and the contact',
+        'Place the site in the structure: the Sonso anticline, the thrust, the flexural setting of the piedmont',
+        'Draw it — block diagram, section, fold sketch — so the mechanism is obvious before the numbers are',
+        'Hand the geology to the geotechnical design of the two walls with the constraints it imposes',
+      ],
+      result:
+        'A geology report for the two walls that explains the block falls as the expression of a conglomerate cap on a soft, tectonically active contact, with the erosion at the toe as the trigger — and hand-drawn figures that the design team could read at a glance.',
+    },
+    technology: ['Field geology', 'Structural geology', 'Hand-drawn sections', 'QGIS', 'SGC cartography'],
+    links: [],
+  },
+  {
     slug: 'vias-verdes-corridor-geology',
     title: 'Reading the ground under an old railway',
     summary:
@@ -165,23 +334,23 @@ export const PROJECTS: Project[] = [
       label: '4°32′N 75°43′W',
       zoom: 11,
     },
-    featured: true,
+    featured: false,
     cover: {
-      src: '/work/field/stc6-annotated.jpg',
-      alt: 'Annotated field photograph of a residual soil outcrop of the Armenia Formation next to a viaduct',
+      src: '/work/quindio/geomorfologia.jpg',
+      alt: 'Geomorphological units map of the Armenia–Montenegro corridor with 5 m contour lines',
       caption:
-        'Station 6 — residual soil of the Armenia Formation exposed in the embankment beside a viaduct. View N–S, 4°31′42″N 75°43′19″W.',
-      ratio: 1.418,
-      kind: 'photo',
+        'Geomorphological units and 5 m contours along the corridor segments. MAGNA-SIRGAS Origen Nacional (EPSG:9377), 1:50 000.',
+      ratio: 1.414,
+      kind: 'map',
     },
     figures: [
       {
-        src: '/work/quindio/geomorfologia.jpg',
-        alt: 'Geomorphological units map of the Armenia–Montenegro corridor with 5 m contour lines',
+        src: '/work/field/stc6-annotated.jpg',
+        alt: 'Annotated field photograph of a residual soil outcrop of the Armenia Formation next to a viaduct',
         caption:
-          'Geomorphological units and 5 m contours along the corridor segments. MAGNA-SIRGAS Origen Nacional (EPSG:9377), 1:50 000.',
-        ratio: 1.414,
-        kind: 'map',
+          'Station 6 — residual soil of the Armenia Formation exposed in the embankment beside a viaduct. View N–S, 4°31′42″N 75°43′19″W.',
+        ratio: 1.418,
+        kind: 'photo',
       },
       {
         src: '/work/quindio/pendientes.jpg',
@@ -316,39 +485,6 @@ export const PROJECTS: Project[] = [
     links: [
       { label: 'Verdant on GitHub', href: 'https://github.com/oscgonz19/Verdant' },
     ],
-  },
-  {
-    slug: 'santa-rosa-landslide',
-    title: 'The hillside that took the road with it',
-    summary:
-      'A large slope failure on a secondary road in Santa Rosa de Cabal, Risaralda: geological and geotechnical study with drone survey, boreholes, laboratory tests and seismic refraction to understand why it moved and how to rebuild.',
-    year: '2024',
-    threads: ['earth', 'field'],
-    place: {
-      name: 'Santa Rosa de Cabal, Risaralda',
-      coords: [-75.62, 4.87],
-      label: '4°52′N 75°37′W',
-      zoom: 11,
-    },
-    featured: false,
-    cover: {
-      src: '/work/santa-rosa/drone-landslide.jpg',
-      alt: 'Drone photograph of a large landslide scar above a river, with the road trace cut across it',
-      caption: 'The failure from the drone: a bare scar several hundred metres across, the river at its toe, the road trace across the middle.',
-      ratio: 1.333,
-      kind: 'photo',
-    },
-    figures: [
-      {
-        src: '/work/santa-rosa/drone-landslide-2.jpg',
-        alt: 'Second drone view of the Santa Rosa landslide showing the full scar and the valley',
-        caption: 'The same slope from upstream. Colluvium and residual soil over a fractured basement, undercut by the river.',
-        ratio: 1.333,
-        kind: 'photo',
-      },
-    ],
-    technology: ['Field geology', 'Boreholes & SPT', 'Laboratory tests', 'Seismic refraction', 'DJI drone', 'QGIS'],
-    links: [],
   },
   {
     slug: 'field-log-2021-2025',
