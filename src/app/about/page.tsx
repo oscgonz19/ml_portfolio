@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 
 // Strata fills, drawn like a geological legend. Ordered youngest → oldest.
 const PATTERN: Record<string, string> = {
-  ice: 'repeating-linear-gradient(135deg, #6f8fa3 0 1px, transparent 1px 8px)',
-  moss: 'repeating-linear-gradient(45deg, #4d6b4c 0 1px, transparent 1px 7px)',
-  ink: 'repeating-linear-gradient(90deg, #1b1916 0 1px, transparent 1px 6px)',
-  ochre: 'radial-gradient(#b4552a 0.8px, transparent 0.9px)',
-  sand: 'radial-gradient(#7d766d 0.7px, transparent 0.8px)',
-  rock: 'repeating-linear-gradient(0deg, #1b1916 0 1px, transparent 1px 5px)',
+  ice: 'repeating-linear-gradient(135deg, rgb(var(--ice)) 0 1px, transparent 1px 8px)',
+  moss: 'repeating-linear-gradient(45deg, rgb(var(--moss)) 0 1px, transparent 1px 7px)',
+  ink: 'repeating-linear-gradient(90deg, rgb(var(--ink)) 0 1px, transparent 1px 6px)',
+  ochre: 'radial-gradient(rgb(var(--ochre)) 0.8px, transparent 0.9px)',
+  sand: 'radial-gradient(rgb(var(--ink-3)) 0.7px, transparent 0.8px)',
+  rock: 'repeating-linear-gradient(0deg, rgb(var(--ink)) 0 1px, transparent 1px 5px)',
 }
 const PATTERN_SIZE: Record<string, string> = {
   ochre: '7px 7px',

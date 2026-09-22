@@ -1,14 +1,12 @@
 /** A map scale bar, used as a divider. Purely decorative. */
 export function ScaleBar({ light = false, km = 5 }: { light?: boolean; km?: number }) {
-  const stroke = light ? '#efe7d6' : '#1b1916'
   return (
     <svg
       aria-hidden="true"
       viewBox="0 0 160 14"
       width="160"
       height="14"
-      className="block"
-      style={{ color: stroke }}
+      className={`block ${light ? 'text-paper' : 'text-ink'}`}
     >
       <g stroke="currentColor" strokeWidth="1" fill="none">
         <path d="M0 8h160M0 4v8M40 4v8M80 4v8M120 4v8M160 4v8" />

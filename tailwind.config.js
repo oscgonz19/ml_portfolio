@@ -1,27 +1,19 @@
+/** Colour tokens are defined once in src/app/globals.css (:root). */
+const c = (name) => `rgb(var(${name}) / <alpha-value>)`
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
-        paper: {
-          DEFAULT: '#f4f0e8',
-          2: '#ece7dc',
-          3: '#e2dccf',
-        },
-        ink: {
-          DEFAULT: '#1b1916',
-          2: '#4a4540',
-          3: '#7d766d',
-        },
-        rule: '#d6cfc1',
-        ochre: {
-          DEFAULT: '#b4552a',
-          deep: '#8f3f1c',
-        },
-        moss: '#4d6b4c',
-        ice: '#6f8fa3',
-        night: '#141311',
+        paper: { DEFAULT: c('--paper'), 2: c('--paper-2'), 3: c('--paper-3') },
+        ink: { DEFAULT: c('--ink'), 2: c('--ink-2'), 3: c('--ink-3') },
+        rule: c('--rule'),
+        ochre: { DEFAULT: c('--ochre'), deep: c('--ochre-deep') },
+        moss: c('--moss'),
+        ice: c('--ice'),
+        night: c('--night'),
       },
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],

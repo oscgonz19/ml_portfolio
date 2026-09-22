@@ -12,12 +12,15 @@ function markerElement(dashed: boolean, name: string, label?: string, flip = fal
   const el = document.createElement('div')
   el.className = `flex items-center gap-2 ${flip ? 'flex-row-reverse' : ''}`
   el.title = label ? `${name} · ${label}` : name
+  // Inline styles: this markup is injected into MapLibre's DOM, so it reads the
+  // palette straight from the :root custom properties.
+  const dotStyle = dashed
+    ? 'border:2px dashed rgb(var(--ice));background:transparent'
+    : 'border:2px solid rgb(var(--paper));background:rgb(var(--ochre))'
   el.innerHTML = `
-    <span class="block h-3 w-3 shrink-0 rounded-full ${
-      dashed ? 'border-2 border-dashed border-[#6f8fa3] bg-transparent' : 'border-2 border-[#f4f0e8] bg-[#b4552a]'
-    }"></span>
-    <span class="whitespace-nowrap bg-[#f4f0e8]/85 px-1.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.12em] text-[#1b1916]">
-      ${name}${label ? `<span class="text-[#7d766d]"> · ${label}</span>` : ''}
+    <span style="${dotStyle}" class="block h-3 w-3 shrink-0 rounded-full"></span>
+    <span style="background:rgb(var(--paper)/0.85);color:rgb(var(--ink))" class="whitespace-nowrap px-1.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.12em]">
+      ${name}${label ? `<span style="color:rgb(var(--ink-3))"> · ${label}</span>` : ''}
     </span>`
   return el
 }
@@ -47,7 +50,8 @@ export function PlaceMapInner({ markers, center, zoom, interactive = true }: Pla
     markers.forEach((m, i) => {
       if (m.quiet) {
         const dot = document.createElement('div')
-        dot.className = 'h-2 w-2 rounded-full bg-[#1b1916] ring-1 ring-[#f4f0e8]'
+        dot.className = 'h-2 w-2 rounded-full'
+        dot.style.cssText = 'background:rgb(var(--ink));box-shadow:0 0 0 1px rgb(var(--paper))'
         dot.title = m.label ? `${m.name} · ${m.label}` : m.name
         new Marker({ element: dot }).setLngLat(m.coords).addTo(map)
         return

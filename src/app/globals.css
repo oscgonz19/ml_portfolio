@@ -3,17 +3,24 @@
 @tailwind utilities;
 
 /* ---------- Tokens ---------- */
+/*
+ * THE PALETTE LIVES HERE AND NOWHERE ELSE.
+ * Values are space-separated RGB channels so Tailwind can apply opacity
+ * modifiers (bg-paper/90). Change these twelve lines to restyle the site.
+ */
 :root {
-  --paper: #f4f0e8;
-  --paper-2: #ece7dc;
-  --ink: #1b1916;
-  --ink-2: #4a4540;
-  --ink-3: #7d766d;
-  --rule: #d6cfc1;
-  --ochre: #b4552a;
-  --moss: #4d6b4c;
-  --ice: #6f8fa3;
-  --night: #141311;
+  --paper: 238 240 239;
+  --paper-2: 229 232 231;
+  --paper-3: 218 222 221;
+  --ink: 26 30 31;
+  --ink-2: 69 76 78;
+  --ink-3: 120 128 130;
+  --rule: 203 210 209;
+  --ochre: 176 82 46;
+  --ochre-deep: 140 60 30;
+  --moss: 77 107 76;
+  --ice: 111 143 163;
+  --night: 20 19 17;
 }
 
 /* ---------- Base ---------- */
@@ -31,7 +38,7 @@
   }
 
   ::selection {
-    background: rgba(180, 85, 42, 0.22);
+    background: rgb(var(--ochre) / 0.22);
   }
 
   h1,
@@ -48,7 +55,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--ochre);
+    outline: 2px solid rgb(var(--ochre));
     outline-offset: 3px;
   }
 }
@@ -207,14 +214,14 @@
 .maplibregl-ctrl-attrib {
   font-family: var(--font-mono) !important;
   font-size: 10px !important;
-  background: rgba(244, 240, 232, 0.85) !important;
-  color: var(--ink-3) !important;
+  background: rgb(var(--paper) / 0.85) !important;
+  color: rgb(var(--ink-3)) !important;
 }
 .maplibregl-ctrl-attrib a {
-  color: var(--ink-2) !important;
+  color: rgb(var(--ink-2)) !important;
 }
 .maplibregl-ctrl-group {
   box-shadow: none !important;
-  border: 1px solid var(--rule) !important;
+  border: 1px solid rgb(var(--rule)) !important;
   border-radius: 2px !important;
 }

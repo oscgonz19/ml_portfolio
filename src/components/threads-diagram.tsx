@@ -5,7 +5,12 @@ import { THREADS } from '@/content/site'
  * Pure SVG, no interaction.
  */
 export function ThreadsDiagram() {
-  const c = { earth: '#b4552a', data: '#1b1916', cartography: '#4d6b4c', field: '#6f8fa3' }
+  const c = {
+    earth: 'rgb(var(--ochre))',
+    data: 'rgb(var(--ink))',
+    cartography: 'rgb(var(--moss))',
+    field: 'rgb(var(--ice))',
+  }
   return (
     <svg viewBox="0 0 320 240" className="h-auto w-full max-w-sm" role="img" aria-label="Four overlapping circles: Earth, Data, Maps, Field">
       <g fill="none" strokeWidth="1.2">
@@ -14,7 +19,7 @@ export function ThreadsDiagram() {
         <circle cx="120" cy="150" r="78" stroke={c.cartography} />
         <circle cx="200" cy="150" r="78" stroke={c.field} />
       </g>
-      <g fontFamily="var(--font-mono)" fontSize="11" letterSpacing="1.4" fill="#1b1916">
+      <g fontFamily="var(--font-mono)" fontSize="11" letterSpacing="1.4" className="fill-ink">
         <text x="52" y="60" fill={c.earth}>
           {THREADS.earth.short.toUpperCase()}
         </text>
@@ -28,7 +33,7 @@ export function ThreadsDiagram() {
           {THREADS.field.short.toUpperCase()}
         </text>
       </g>
-      <circle cx="160" cy="125" r="2.5" fill="#1b1916" />
+      <circle cx="160" cy="125" r="2.5" className="fill-ink" />
     </svg>
   )
 }
