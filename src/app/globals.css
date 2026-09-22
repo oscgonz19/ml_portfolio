@@ -1,63 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-/* ---------- Variables ---------- */
+/* ---------- Tokens ---------- */
 :root {
-  --foreground-rgb: 255, 255, 255;
-  /* texto blanco por defecto */
-  --background-rgb: 0, 0, 0;
-  /* fondo negro absoluto */
+  --paper: #f4f0e8;
+  --paper-2: #ece7dc;
+  --ink: #1b1916;
+  --ink-2: #4a4540;
+  --ink-3: #7d766d;
+  --rule: #d6cfc1;
+  --ochre: #b4552a;
+  --moss: #4d6b4c;
+  --ice: #6f8fa3;
+  --night: #141311;
 }
 
 /* ---------- Base ---------- */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
-    @apply text-base;
-    color: rgb(var(--foreground-rgb));
-    background: rgb(var(--background-rgb));
+    @apply bg-paper text-ink font-sans;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background: rgba(180, 85, 42, 0.22);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    font-variation-settings: 'opsz' 96, 'SOFT' 30;
+    text-wrap: balance;
+  }
+
+  a {
+    text-underline-offset: 0.18em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ochre);
+    outline-offset: 3px;
   }
 }
 
-/* ---------- Componentes ---------- */
+/* ---------- Components ---------- */
 @layer components {
-
-  /* Sección homogénea con buena separación */
-  .section {
-    @apply container mx-auto px-4 sm:px-6 lg:px-24 py-16 text-white;
+  /* Small caps-style label used for section eyebrows, coordinates, metadata */
+  .label {
+    @apply font-mono text-[11px] uppercase tracking-label text-ink-3;
   }
 
-  /* Línea divisoria sutil entre secciones negras */
-  .divider {
-    @apply w-full h-px bg-gray-800 my-8;
+  .label-ink {
+    @apply font-mono text-[11px] uppercase tracking-label text-ink-2;
   }
 
-  /* Texto manuscrito opcional */
-  .handwritten-text {
-    @apply text-[3em];
-    font-family: 'Amatic SC', cursive;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  /* Hairline rule that reads like a map border */
+  .rule {
+    @apply border-t border-rule;
+  }
+
+  .rule-ink {
+    @apply border-t border-ink;
+  }
+
+  /* Page container */
+  .wrap {
+    @apply mx-auto w-full max-w-page px-4 sm:px-6 lg:px-10;
+  }
+
+  /* Reading measure */
+  .measure {
+    @apply max-w-prose;
+  }
+
+  /* Underlined text links */
+  .link {
+    @apply underline decoration-rule underline-offset-4 transition-colors hover:decoration-ochre hover:text-ochre-deep;
+  }
+
+  /* Thread chips — colour is a dot, never a filled badge */
+  .chip {
+    @apply inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-label text-ink-2;
+  }
+  .chip::before {
+    content: '';
+    @apply inline-block h-2 w-2 rounded-full bg-current;
+  }
+  .chip-earth::before {
+    background: var(--ochre);
+  }
+  .chip-data::before {
+    background: var(--ink);
+  }
+  .chip-cartography::before {
+    background: var(--moss);
+  }
+  .chip-field::before {
+    background: var(--ice);
+  }
+
+  /* Tech tags at the end of a story */
+  .tag {
+    @apply inline-block rounded-sm border border-rule px-2 py-0.5 font-mono text-[11px] text-ink-2;
   }
 }
 
-/* ---------- Utilidades ---------- */
-@layer utilities {
-  .text-muted {
-    @apply text-gray-400;
-  }
+/* ---------- Prose (field notes) ---------- */
+.prose-note {
+  @apply text-[17px] leading-[1.7] text-ink;
+}
+.prose-note > * + * {
+  margin-top: 1.1em;
+}
+.prose-note p {
+  text-wrap: pretty;
+}
+.prose-note a {
+  @apply underline decoration-rule underline-offset-4 hover:decoration-ochre;
+}
+.prose-note strong {
+  @apply font-semibold text-ink;
+}
+.prose-note em {
+  font-style: italic;
+}
+.prose-note h2,
+.prose-note h3 {
+  @apply mt-10 text-2xl;
+}
+.prose-note ul,
+.prose-note ol {
+  @apply pl-5;
+}
+.prose-note ul {
+  list-style: disc;
+}
+.prose-note ol {
+  list-style: decimal;
+}
+.prose-note li + li {
+  margin-top: 0.35em;
+}
+.prose-note blockquote {
+  @apply border-l-2 border-ochre pl-4 text-ink-2;
+}
+.prose-note code {
+  @apply rounded-sm bg-paper-2 px-1 py-0.5 font-mono text-[0.9em];
+}
+.prose-note table {
+  @apply my-6 w-full border-collapse font-mono text-[13px];
+}
+.prose-note th,
+.prose-note td {
+  @apply border-b border-rule px-2 py-1.5 text-left align-top;
+}
+.prose-note thead {
+  @apply hidden;
+}
+.prose-note tr td:last-child {
+  @apply text-right tabular-nums;
+}
+.prose-note hr {
+  @apply my-10 border-rule;
+}
 
+/* ---------- Utilities ---------- */
+@layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* Paper grain: barely-there noise so large flat areas don't look digital */
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* Map-style graticule for figure frames */
+  .graticule {
+    background-image:
+      linear-gradient(to right, var(--rule) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--rule) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+  }
 }
 
-/* ---------- Scroll suave ---------- */
-html {
-  scroll-behavior: smooth;
+/* MapLibre overrides so the map matches the paper palette */
+.maplibregl-ctrl-attrib {
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+  background: rgba(244, 240, 232, 0.85) !important;
+  color: var(--ink-3) !important;
+}
+.maplibregl-ctrl-attrib a {
+  color: var(--ink-2) !important;
+}
+.maplibregl-ctrl-group {
+  box-shadow: none !important;
+  border: 1px solid var(--rule) !important;
+  border-radius: 2px !important;
 }

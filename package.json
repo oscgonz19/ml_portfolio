@@ -1,7 +1,10 @@
 {
-  "name": "ml_engineer_portafolio",
+  "name": "ozz-field-journal",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,14 +12,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "framer-motion": "^11.3.31",
+    "gray-matter": "^4.0.3",
+    "maplibre-gl": "^5",
     "next": "14.2.35",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
-    "react-slick": "^0.30.2",
-    "sharp": "^0.33.4",
-    "slick-carousel": "^1.8.1"
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@types/node": "^25.0.3",
